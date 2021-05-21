@@ -1,0 +1,3235 @@
+html {
+  zoom: 100%;
+}
+
+:root {
+  --horiz-marg: 0;
+  --vert-marg: 0;
+}
+
+.nomis-body {
+  text-align: center;
+  /*background-color: rgb(148,212,169);*/
+  background: url(back.jpg);
+  background-size: cover;
+  text-align: center;
+
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  height: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*top-l/r-bottom*/
+  margin: 1% auto 4.54%;
+  /*margin-top:  3%;
+  margin-bottom: 5.5%;*/
+  /*color: rgb(0,114,86);*/
+  color: rgb(241, 241, 241);
+  background-color: rgb(14, 14, 14);
+  width: 69vw;
+  /*margin-left: 10%;*/
+  border-radius: 14px;
+  transition: ease-in-out 214ms;
+  animation: text-blink 1400ms infinite ease-in-out;
+  position: relative;
+  top: -2vh;
+
+  white-space: nowrap;
+}
+
+@keyframes come-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes come-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes button-flash-0 {
+  from {
+    background-color: rgb(255, 128, 0);
+    color: rgb(254, 254, 254);
+  }
+
+  to {
+    background-color: rgb(0, 176, 176);
+    color: rgb(254, 254, 254);
+  }
+}
+
+@keyframes button-flash-1 {
+  from {
+    background-color: rgb(212, 188, 0);
+    color: rgb(254, 254, 254);
+  }
+
+  to {
+    background-color: rgb(0, 176, 176);
+    color: rgb(254, 254, 254);
+  }
+}
+
+@keyframes button-flash-2 {
+  from {
+    /*background-color: rgb(0, 128, 0);*/
+    background-color: rgb(0, 128, 0);
+    color: rgb(254, 254, 254);
+  }
+
+  to {
+    background-color: rgb(0, 176, 176);
+    color: rgb(254, 254, 254);
+  }
+}
+
+@keyframes button-flash-3 {
+  from {
+    background-color: rgb(24, 48, 212);
+    /*background-color: rgb(0,102,184);*/
+    color: rgb(156, 128, 128);
+  }
+
+  to {
+    background-color: rgb(0, 176, 176);
+    color: rgb(254, 254, 254);
+  }
+}
+
+@keyframes button-flash-4 {
+  from {
+    background-color: rgb(128, 0, 204);
+    color: rgb(254, 254, 254);
+  }
+
+  to {
+    background-color: rgb(0, 176, 176);
+    color: rgb(254, 254, 254);
+  }
+}
+
+@keyframes button-flash-5 {
+  from {
+    background-color: rgb(196, 0, 196);
+    color: rgb(254, 254, 254);
+  }
+
+  to {
+    background-color: rgb(0, 176, 176);
+    color: rgb(254, 254, 254);
+  }
+}
+
+@keyframes text-blink {
+  0% {
+    color: rgb(241, 241, 241);
+  }
+
+  50% {
+    color: rgb(14, 14, 14);
+  }
+}
+
+@keyframes blink-end {
+  0% {
+    background-color: rgb(14, 14, 14);
+  }
+
+  50% {
+    background-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes eye-in {
+  from {
+    background-color: rgb(4, 4, 4);
+  }
+
+  to {
+    background: url(eye.jpg);
+    background-position: center;
+  }
+}
+
+@keyframes blink-frame-border {
+  0% {
+    border-color: rgb(14, 14, 14);
+  }
+
+  50% {
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+/* nomis-text to all rgb(128,128,128) gradient */
+@keyframes blink-center {
+  from {
+    /*
+    height: 20vh;
+    width: 20vh;
+    */
+    background-color: rgb(20,20,20);
+    border-color: rgb(14, 14, 14);
+  }
+
+  to {
+    /*
+    height: 20vh;
+    width: 20vh;
+    */
+    background-color: rgb(196, 0, 196);
+    border-color: rgb(144, 0, 144);
+  }
+}
+
+@keyframes blink-nomis {
+  from {
+    background: -webkit-linear-gradient(left, rgb(0, 102, 64), rgb(0, 102, 64), rgb(224, 224, 0), rgb(214, 0, 139), rgb(102, 0, 214), rgb(102, 0, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  to {
+    background: -webkit-linear-gradient(left, rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes blink-green {
+  from {
+    background-color: rgb(0, 96, 64);
+    border-color: rgb(0, 112, 75);
+  }
+
+  to {
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes blink-red {
+  from {
+    background-color: rgb(192, 0, 117);
+    border-color: rgb(224, 0, 149);
+  }
+
+  to {
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes blink-yellow {
+  from {
+    background-color: rgb(192, 192, 0);
+    border-color: rgb(224, 224, 0);
+  }
+
+  to {
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes blink-blue {
+  from {
+    background-color: rgb(96, 0, 192);
+    border-color: rgb(112, 0, 224);
+  }
+
+  to {
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes btn-dark {
+  0% {
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(196, 0, 196);
+  }
+
+  50% {
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes frame-dark {
+  from {
+    border-color: rgb(196, 0, 196);
+  }
+
+  to {
+    border-color: rgb(196, 0, 196);
+  }
+}
+
+@keyframes board-destroy {
+  from {
+    position: absolute;
+    background: url(eye.jpg);
+    border-color:rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    position: absolute;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+    margin: -172vh -80vw;
+  }
+}
+
+
+
+@keyframes board-destroy-ws {
+  from {
+    position: absolute;
+    background: url(eye.jpg);
+    border-color:rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    position: absolute;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+    margin: -245vh -80vw;
+  }
+}
+
+
+
+@keyframes board-destroy-xws {
+  from {
+    position: absolute;
+    background: url(eye.jpg);
+    border-color:rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    position: absolute;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+    margin: -416vh -80vw;
+  }
+}
+
+
+
+@keyframes board-destroy-xxws {
+  from {
+    position: absolute;
+    background: url(eye.jpg);
+    border-color:rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    position: absolute;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+    margin: -212vh -80vw;
+  }
+}
+
+
+
+@keyframes board-destroy-tn {
+  from {
+    position: absolute;
+    background: url(eye.jpg);
+    border-color:rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    position: absolute;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+    margin: -144vh -80vw;
+  }
+}
+
+
+
+@keyframes board-destroy-portrait {
+  from {
+    height: 20vh;
+    width: 20vh;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    margin: -51vh var(--horiz-marg);
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+@keyframes board-destroy-portrait-24 {
+  from {
+    height: 24vh;
+    width: 24vh;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    margin: -51vh var(--horiz-marg);
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+@keyframes board-destroy-portrait-tn {
+  from {
+    height: 20vh;
+    width: 20vh;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    margin: -32vh var(--horiz-marg);
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+@keyframes board-destroy-portrait-24-tn {
+  from {
+    height: 24vh;
+    width: 24vh;
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+
+  to {
+    height: 250vw;
+    width: 250vw;
+    margin: -40vh var(--horiz-marg);
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+@keyframes pre-board-destroy {
+  0%, 40% {
+    /*
+    height: 20vh;
+    width: 20vh;
+    */
+    background: none;
+    background-color: rgb(20, 20, 20);
+    border-color: rgb(14, 14, 14);
+  }
+
+  30%, 70% {
+    /*
+    height: 20vh;
+    width: 20vh;
+    */
+    background: none;
+    background-color: rgb(196, 0, 196);
+    border-color: rgb(144, 0, 144);
+  }
+
+  20%, 60%, 100% {
+    /*
+    height: 20vh;
+    width: 20vh;
+    */
+    background: url(eye.jpg);
+    border-color: rgb(0, 176, 176);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@keyframes pre-board-des-frame {
+  0%, 40%, 70%, 100% {
+    background-color: rgb(20, 20, 20);
+    border-color: rgb(14,14,14);
+  }
+
+  60% {
+    background-color: rgb(20,20,20);
+    border-color: rgb(196,0,196);
+  }
+
+  20%, 65%, 80% {
+    border-color: rgb(0, 176, 176);
+  }
+}
+
+@keyframes pre-board-destroy-title {
+  0%, 40%, 70%, 100% {
+    background-color: rgb(20, 20, 20);
+  }
+
+  60% {
+    background-color: rgb(196, 0, 196);
+  }
+
+  20%, 65%, 80% {
+    background-color: rgb(0, 176, 176);
+  }
+}
+
+@keyframes oscillate {
+  from {
+    top: 18.2vh;
+    right: 26vw;
+  }
+
+  to {
+    top: 18.2vh;
+    right: 25vw;
+  }
+}
+
+@keyframes nomis-winner {
+  0%, 40%, 60%, 80% {
+    opacity: 1;
+  }
+
+  20%, 65%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes nomis-overlay-winner {
+  0%, 40%, 60%, 80% {
+    background-color: rgb(22, 22, 22);
+  }
+
+  20%, 100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes nomis-txt-winner {
+  0%, 40%, 70%, 100% {
+    background: -webkit-linear-gradient(left, rgb(0, 102, 64), rgb(0, 102, 64), rgb(224, 224, 0), rgb(214, 0, 139), rgb(102, 0, 214), rgb(102, 0, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+  }
+
+  60% {
+    background: -webkit-linear-gradient(left, rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+  }
+
+  20%, 65%, 80% {
+    background: -webkit-linear-gradient(left, rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+  }
+}
+
+@keyframes oscillate-center {
+  from {
+    right: 40.22vw;
+    bottom: 13.4vh;
+  }
+
+  to {
+    right: 39.22vw;
+    bottom: 13.4vh;
+  }
+}
+
+@keyframes explosion-fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  50% {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgb(212, 84, 0);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgb(4, 4, 4);
+  }
+}
+
+@keyframes winner {
+  0%, 100% {
+    background-color: rgb(198, 0, 0);
+    border-color: rgb(198, 0, 0);
+    color: rgb(234, 234, 234);
+  }
+
+  14.28% {
+    background-color: rgb(241, 114, 0);
+    border-color: rgb(241, 114, 0);
+    color: rgb(234, 234, 234);
+  }
+
+  28.56% {
+    background-color: rgb(212, 188, 0);
+    border-color: rgb(212, 188, 0);
+    color: rgb(234, 234, 234);
+  }
+
+  42.84% {
+    background-color: rgb(0, 114, 0);
+    border-color: rgb(0, 114, 0);
+    color: rgb(234, 234, 234);
+  }
+
+  57.12% {
+    background-color: rgb(0, 0, 198);
+    border-color: rgb(0, 0, 198);
+    color: rgb(234, 234, 234);
+  }
+
+  71.4% {
+    background-color: rgb(114, 0, 189);
+    border-color: rgb(114, 0, 189);
+    color: white;
+  }
+
+  85.68% {
+    background-color: rgb(182, 0, 182);
+    border-color: rgb(182, 0, 182);
+    color: rgb(234, 234, 234);
+  }
+}
+
+@keyframes winner-frame {
+  0%, 100% {
+    border-color:rgb(198, 0, 0);
+  }
+
+  14.28% {
+    border-color: rgb(241, 114, 0);
+  }
+
+  28.56% {
+    border-color: rgb(241, 241, 0);
+  }
+
+  42.84% {
+    border-color: rgb(0, 114, 0);
+  }
+
+  57.12% {
+    border-color: rgb(0, 0, 198);
+  }
+
+  71.40% {
+    border-color: rgb(114, 0, 189);
+  }
+
+  85.68% {
+    border-color: rgb(182, 0, 182);
+  }
+}
+
+
+
+@keyframes winner-frame-alt {
+  0%, 100% {
+    background-color: rgb(0, 112, 75);
+  }
+
+  10% {
+    background-color: rgb(112, 0, 224);
+  }
+
+  20% {
+    background-color: rgb(0, 112, 75);
+  }
+
+  30% {
+    background-color: rgb(224, 224, 0);
+  }
+
+  40% {
+    background-color: rgb(224, 0, 149);
+  }
+
+  50% {
+    background-color: rgb(224, 224, 0);
+  }
+
+  60% {
+    background-color: rgb(0, 112, 75);
+  }
+
+  70% {
+    background-color: rgb(112, 0, 224);
+  }
+
+  80% {
+    background-color: rgb(0, 112, 75);
+  }
+
+  90% {
+    background-color: rgb(224, 224, 0);
+  }
+}
+
+@keyframes skill-in {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes skill-out {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes loser-text-ani {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes loser-text-ani-out {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes nomis-overlay-flash {
+  from {
+    opacity: 0.32;
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes nomis-loser {
+  from {
+    /*background: -webkit-linear-gradient(rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234));*/
+    background: -webkit-linear-gradient(rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255));
+    -webkit-text-stroke: 1px rgb(96,234,255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+  }
+
+  to {
+    /*background: -webkit-linear-gradient(rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196));*/
+    background: -webkit-linear-gradient(rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+  }
+}
+
+@keyframes nomis-ingame {
+  from {
+      /*background: -webkit-linear-gradient(rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234), rgb(234,0,234));*/
+      background: -webkit-linear-gradient(rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255));
+      -webkit-text-stroke: 1px rgb(96,234,255);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+
+    }
+
+    to {
+      /*background: -webkit-linear-gradient(rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196));*/
+      background: -webkit-linear-gradient(rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+
+    }
+  }
+
+  
+
+@keyframes nomis-txt-loser {
+  from {
+    background: -webkit-linear-gradient(rgb(0, 102, 64), rgb(0, 102, 64), rgb(224, 224, 0), rgb(214, 0, 139), rgb(102, 0, 214), rgb(102, 0, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+  }
+
+  to {
+    background: -webkit-linear-gradient(rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+  }
+}
+
+@keyframes nomis-txt-conquer {
+  0%, 60% {
+    background: -webkit-linear-gradient(left, rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  40%, 80% {
+    background: -webkit-linear-gradient(left, rgb(0, 102, 64), rgb(0, 102, 64), rgb(224, 224, 0), rgb(214, 0, 139), rgb(102, 0, 214), rgb(102, 0, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  20%, 65%, 100% {
+    background: -webkit-linear-gradient(left, rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176), rgb(0, 176, 176));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes eye-watching {
+  0%, 5% {
+    background: none;
+    background-color: rgb(20,20,20);
+  }
+  
+  6%, 100% {
+    background: url(eye.jpg);
+    background-position: center;
+  }
+}
+
+.container {
+  display: block;
+  width: 50%;
+  height: 10vh;
+  margin: 0;
+}
+
+.btn {
+  margin: 4px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border-radius: 20%;
+  z-index: 102;
+}
+
+.skill-level {
+  height: 89vh;
+  width: 69vw;
+  top: 18vh;
+  right: 15.44vw;
+  border-radius: 20px;
+  position: absolute;
+  background-color: rgb(19, 19, 19);
+  font-size: 62px;
+  font-weight: bold;
+  z-index: 105;
+  display: block;
+  visibility: hidden;
+}
+
+.skill-btn {
+  margin: 1.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-btn-btn {
+  background-color: transparent;
+  color: rgb(254, 254, 254);
+  height: 7.17vh;
+  line-height: 7.17vh;
+  text-align: center;
+  width: 84%;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.317em;
+  font-weight: bold;
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-0 {
+  background-color: rgb(255, 128, 0);
+}
+
+#btn-1 {
+  background-color: rgb(212, 188, 0);
+}
+
+#btn-2 {
+  /*background-color: rgb(0, 128, 0);*/
+  background-color: rgb(0, 128, 0);
+}
+
+#btn-3 {
+  /*background-color: rgb(0, 0, 212);*/
+  background-color: rgb(0,96,212);
+}
+
+#btn-4 {
+  background-color: rgb(128, 0, 204);
+}
+
+#btn-5 {
+  background-color: rgb(196, 0, 196);
+}
+
+
+.frame, .back-frame, .outer-frame {
+  height: 84vh;
+  width: 100vw;
+  border-radius: 42%;
+  position: absolute;
+  top: 16.2vh;
+  right: 25.5vw;
+  z-index: 99;
+}
+
+.frame {
+  background-color: rgb(20,20,20);
+  border: 14px solid rgb(14,14,14);
+}
+
+.back-frame {
+  background-color: rgb(1,1,1);
+  opacity: 0.88;
+  z-index: 96;
+  border: 14px solid transparent;
+}
+
+.outer-frame {
+  background-color: transparent;
+}
+
+.inner-frame, .btn-ctr {
+  height: 462px;
+  width: 454px;
+  border-radius: 28px;
+  position: absolute;
+  right: 32.72vw;
+  top: 23.75vh;
+}
+
+.inner-frame {
+  z-index: 100;
+  opacity: 0.4;
+  background-color: rgb(39, 39, 39);
+}
+
+.btn-ctr {
+  z-index: 101;
+  /*opacity: 0;*/
+  background-color: transparent;
+}
+
+.center, .win-center {
+  height: 228px;
+  width: 228px;
+  border-radius: 50%;
+  position: absolute;
+  right: 39.72vw;
+  bottom: 15.4vh;
+}
+
+.center {
+  z-index: 103;
+  background-color: rgb(20, 20, 20);
+  border: 14px solid rgb(14, 14, 14);
+}
+
+.win-center {
+  z-index: 98;
+  background-color: rgb(204, 204, 204);
+  border: 14px solid rgb(180, 180, 180);
+}
+
+.nomis, .nomis-overlay {
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 14vh;
+}
+
+.nomis {
+  border-top: 4px solid rgb(14, 14, 14);
+  border-bottom: 4px solid rgb(14, 14, 14);
+  background-color: rgb(22, 22, 22);
+  position: absolute;
+  /*top: -37.8%;*/
+}
+
+.nomis-overlay {
+  opacity: 0.4;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  background-color: rgb(42, 42, 42);
+  position: absolute;
+  /*top: 35%;*/
+  z-index: 105;
+}
+
+.nomis-text {
+  font-size: 84px;
+  font-family: 'Cedarville Cursive', cursive;
+  background: -webkit-linear-gradient(left, rgb(0, 102, 64), rgb(0, 102, 64), rgb(224, 224, 0), rgb(214, 0, 139), rgb(102, 0, 214), rgb(102, 0, 214));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  top: 5.4vh;
+  z-index: 104;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.loser-text {
+  margin: auto;
+  position: relative;
+  line-height: 200px;
+  font-family: 'Permanent Marker', cursive;
+  color: rgb(255, 0, 0);
+  font-size: 120px;
+  font-weight: bold;
+  visibility: hidden;
+  transition: ease-in-out;
+  z-index: 106;
+}
+
+.red {
+  background-color: rgb(192, 0, 117);
+  border: 10px solid rgb(224, 0, 149);
+}
+
+.green {
+  background-color: rgb(0, 96, 72);
+  border: 10px solid rgb(0, 112, 84);
+}
+
+.blue {
+  background-color: rgb(96, 0, 192);
+  border: 10px solid rgb(112, 0, 224);
+}
+
+.yellow {
+  background-color: rgb(192, 192, 0);
+  border: 10px solid rgb(224, 224, 0);
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+  border: 10px solid rgb(255, 255, 255);
+}
+
+.dark-btn {
+  background-color: rgb(7,7,7);
+  border: 10px solid rgb(196,0,196);
+}
+
+.dark-btn-alive {
+  background-color: rgb(7,7,7);
+  border: 10px solid rgb(0,176,176);
+}
+
+.frame-alive {
+  border: 10px solid rgb(0,176,176);
+}
+
+.row-0, .row-1 {
+  z-index: 100;
+  position: relative;
+  top: -3.2vh;
+}
+
+.body-overlay, .shadow-overlay {
+  /*font-family: 'Permanent Marker', cursive;*/
+  font-family: 'Permanent Marker', cursive;
+  color: rgb(255, 255, 255);
+  font-size: 414px;
+  font-weight: bold;
+  visibility: hidden;
+  transition: ease-in-out;
+  height: 104vh;
+  width: 100vw;
+  /*overflow: hidden;*/
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  z-index: 107;
+}
+
+.body-overlay {
+  background-color: rgb(212, 0, 164);
+}
+
+.shadow-overlay {
+  background-color: rgb(4, 4, 4);
+  transition: ease-in;
+}
+
+
+.emoji {
+  font-size: 1.44em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media only screen and (orientation: portrait) {
+  #level-title {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 6.6vh;
+    left: 0;
+    right: unset;
+    font-size: 0.75em;
+    height: 9vh;
+    line-height: 9vh;
+    opacity: 0.92;
+  }
+
+  .emoji {
+    position: relative;
+    top: 0vh;
+    height: 4.5vh;
+    line-height: 4.5vh;
+    height: 50%;
+    margin-bottom: 1vh;
+    margin-left: 1.5vw;
+  }
+
+  .skill-level {
+    width: 92%;
+    height: 80vh;
+    margin: 0;
+    right: unset;
+    left: 4%;
+  }
+
+  .skill-btn {
+    width: 100%;
+    margin: 5.32vh auto;
+  }
+
+  .skill-btn-btn {
+    width: 92%;
+  }
+
+  /*.nomis-body .menu-icon {
+    top: -3vh;
+    left: 0vw;
+  }*/
+
+  .container {
+    height: fit-content;
+    width: 100vw;
+  }
+  
+  /*start with making elements different colors to discover what is different and causing different screen sizes to look different.*/
+  @media only screen and (max-width: 1499px) {
+    .nomis-body {
+      overflow-y: hidden;
+    }
+    
+    /*
+    .menu-icon {
+      height: 7.5vh;
+      width: 7.5vh;
+    }
+    */
+
+    .btn {
+      height: 13.84vh;
+      width: 92%;
+      margin: 0.6vh auto;
+    }
+
+
+
+    @media only screen and (min-height: 651px) {
+    
+      .btn {
+      height: 14.25vh;
+      }
+    
+  }
+
+
+  @media only screen and (min-height: 700px) {
+    
+    .btn {
+    height: 13.75vh;
+    }
+  
+}
+
+  .center, .win-center {
+    right: unset;
+    bottom: unset;
+    height: 22vh;
+    line-height: 22vh;
+    width: 46.6vw;
+    margin: 26.46vh var(--horiz-marg);
+  }
+
+    @media only screen and (min-height: 500px) and (max-height: 599px) {
+      .btn {
+        height: 13.25vh;
+        width: 92%;
+        margin: 0.6vh auto;
+      }
+
+      @media only screen and (max-width: 299px) {
+        .center, .win-center {
+          right: unset;
+          bottom: unset;
+          height: 21vh;
+          line-height: 21vh;
+        }
+      }
+      
+
+      @media only screen and (min-height: 526px) {
+        .btn {
+          height: 13.5vh;
+        }
+      }
+
+      @media only screen and (min-height: 551px) {
+        .btn {
+          height: 13.75vh;
+        }
+      }
+
+      @media only screen and (min-height: 576px) {
+        .btn {
+          height: 13.84vh;
+        }
+      }
+    }
+    
+    .container {
+      width: 100vw;
+    }
+    
+    .frame, .back-frame, .outer-frame {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .frame, .back-frame {
+      height: 100%;
+      width: 92%;
+      position: relative;
+      top: 0;
+      margin: 0 auto;
+    }
+
+    .outer-frame {
+      position: absolute;
+      left: 0;
+      height: 77.5vh;
+      top: 17.2vh;
+    }
+
+    .inner-frame, .btn-ctr {
+      width: 96%;
+      position: relative;
+      top: 0vh;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .inner-frame {
+      width: 92.5%;
+      opacity: 0;
+    }
+    
+    .outer-frame, .frame, .back-frame, .inner-frame, .btn-ctr {
+      border-radius: 0;
+      position: absolute;
+      right: unset;
+      border-radius: 6%;
+    }
+
+    .btn {
+      border-radius: 6%;
+    }
+
+    .row-0, .row-1 {
+      top: 1.35vh;
+    }
+
+    .inner-frame, .btn-ctr {
+      height: 70.1vh;
+      margin: 2.7vh 2%;
+    }
+
+    .nomis-overlay, .nomis {
+      height: 46%;
+      top: 27%;
+      text-align: center;
+    }
+
+    .nomis-text {
+      top: 1vh;
+      font-size: 3.27em;
+    }
+
+
+
+    @media only screen and (min-height: 700px) {
+      .nomis-overlay, .nomis {
+        top: 28%;
+      }
+    }
+
+    
+    @media only screen and (min-height: 900px) {
+      .nomis-overlay, .nomis {
+        top: 29%;
+      }
+    }
+
+
+    @media only screen and (min-height: 1100px) {
+      .nomis-overlay, .nomis {
+        top: 30%;
+      }
+    }
+
+
+    /*
+    .outer-frame {
+      background-color: red;
+    }
+
+    .frame, .back-frame {
+      background-color: orange;
+    }
+
+    .inner-frame {
+      background-color: green;
+    }
+
+    .btn-ctr {
+      background-color: blue;
+    }
+
+    .container {
+      background-color: purple;
+    }*/
+
+
+
+    
+
+
+
+    @media only screen and (max-height: 499px) {
+      .outer-frame {
+        height: 76vh;
+      }
+
+      .row-0, .row-1 {
+        top: 0.5vh;
+      }
+
+      .btn {
+        height: 15.25vh;
+      }
+
+      @media only screen and (min-height: 426px) {
+        .btn {
+          height: 15.5vh;
+        }
+      }
+
+      .center {
+        margin: 24.5vh var(--horiz-marg);
+      }
+    }
+
+    @media only screen and (min-height: 451px) and (max-height: 499px) {
+      .nomis-text {
+        top: 1.75vh;
+      }
+
+      @media only screen and (min-height: 476px) {
+        .btn {
+          height: 15.75vh;
+        } 
+      }
+    }
+
+    @media only screen and (min-height: 500px) and (max-height: 550px) {
+      .nomis-text {
+        top: 2.25vh;
+      }
+    }
+
+    @media only screen and (min-height: 551px) {
+      .nomis-text {
+        top: 2.75vh;
+      }
+
+      .btn-ctr, .inner-frame {
+        margin: 3.7vh 2%;
+      }
+    }
+
+    @media only screen and (max-height: 599px) {
+      /*.center, .win-center {
+        height: 17vh;
+        line-height: 17vh;
+      }*/
+      
+      .nomis, .nomis-overlay {
+        height: 7.32vh;
+        line-height: 7.32vh;
+
+        top: 28.5%;
+      }
+    
+      .nomis-text {
+        top: -1.5vh;
+      }
+    }
+
+    @media only screen and (min-height: 600px) {
+      .outer-frame {
+        height: 78.5vh;
+      }
+
+      .nomis-text {
+        top: 1vh;
+      }
+
+      .nomis, .nomis-overlay {
+        height: 9.2vh;
+        line-height: 9.2vh;
+      }
+    
+      .nomis-text {
+        top: -1vh;
+      }
+
+      /*RE-ADDRESS ALL POTRAITS BASED ON BELOW. START HERE*/
+      @media only screen and (min-width: 300px) {
+        .center {
+          height: 24vh;
+          width: 24vh;
+        }
+      }
+    }
+
+    @media only screen and (min-height: 676px) {
+      .nomis-text {
+        top: -1.5vh;
+      }
+    }
+
+    @media only screen and (min-height: 700px) {
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+    
+  }
+
+
+
+  @media only screen and (min-height: 800px) {
+    .btn {
+      height: 14.25vh;
+    }
+  }
+
+
+  @media only screen and (min-height: 1200px) {
+    .center, .win-center {
+      margin: 26.84vh var(--horiz-marg);
+    }
+
+    @media only screen and (min-width: 300px) {
+      .center, .win-center {
+        margin: 24.84vh var(--horiz-marg);
+      } 
+    }
+  }
+
+  @media only screen and (min-height: 1000px) {
+    /*.row-0, .row-1 {
+      top: 0.35vh;
+    }*/
+
+    .btn {
+      height: 14.6vh;
+    }
+
+    @media only screen and (min-height: 1000px) and (max-height: 1099px) {
+      .row-0, .row-1 {
+        top: -0.5vh;
+      }
+  
+      .center, .win-center {
+        margin: 27.2vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.62vh var(--horiz-marg);
+        } 
+      } 
+  
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+
+    @media only screen and (min-height: 1100px) and (max-height: 1199px) {
+      .row-0, .row-1 {
+        top: 0vh;
+      }
+  
+      .center, .win-center {
+        margin: 26.7vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.7vh var(--horiz-marg);
+        } 
+      }
+  
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+
+    @media only screen and (min-height: 1200px) and (max-height: 1299px) {
+      .row-0, .row-1 {
+        top: 0vh;
+      }
+  
+      .center, .win-center {
+        margin: 27.2vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.42vh var(--horiz-marg);
+        } 
+      }
+  
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+
+    @media only screen and (min-height: 1300px) {
+      #level-title {
+        top: 7vh;
+      }
+
+      .outer-frame {
+        top: 17.7vh;
+      }
+      
+      .row-0, .row-1 {
+        top: 0vh;
+      }
+
+      .inner-frame, .btn-ctr {
+        margin: 4.07vh 2%;
+      }
+  
+      .center, .win-center {
+        margin: 27.84vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.51vh var(--horiz-marg);
+        } 
+      }
+  
+      .nomis-text {
+        top: -1.25vh;
+      }
+
+      @media only screen and (min-height: 1400px) {
+        .nomis-text {
+          top: -1.25vh;
+        }
+        
+        #level-title {
+          top: 7.24vh;
+        }
+  
+        .outer-frame {
+          top: 17.84vh;
+        }
+
+        .center, .win-center {
+          margin: 26.4vh var(--horiz-marg);
+        } 
+
+        @media only screen and (min-height: 1500px) {
+          #level-title {
+            top: 7.4vh;
+          }
+    
+          .outer-frame {
+            top: 18vh;
+          }
+
+          .inner-frame, .btn-ctr {
+            margin: 3.51vh 2%;
+          }
+
+          .btn {
+            height: 15.25vh;
+          }
+
+          .center, .win-center {
+            margin: 26.51vh var(--horiz-marg);
+          }
+        }
+
+        @media only screen and (min-height: 1600px) {
+          #level-title {
+            top: 7.77vh;
+          }
+    
+          .outer-frame {
+            top: 18.46vh;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-height: 999px) {
+    .row-0, .row-1 {
+      top: 0vh;
+    }
+
+    .center, .win-center {
+      margin: 26.6vh var(--horiz-marg);
+    }
+
+    @media only screen and (min-width: 300px) {
+      .center, .win-center {
+        margin: 24.6vh var(--horiz-marg);
+      } 
+    }
+
+    @media only screen and (min-height: 951px) {
+      .row-0, .row-1 {
+        top: -0.5vh;
+      }
+
+      .center, .win-center {
+        margin: 27.2vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 25.84vh var(--horiz-marg);
+        } 
+      }
+
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+
+    @media only screen and (max-height: 950px) and (min-height: 851px) {
+      .row-0, .row-1 {
+        top: -0.5vh;
+      }
+
+      .center, .win-center {
+        margin: 27.6vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26vh var(--horiz-marg);
+        } 
+
+        @media only screen and (min-height: 900px) {
+          .center, .win-center {
+            margin: 25.84vh var(--horiz-marg);
+          }
+        }
+      }
+
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+    @media only screen and (max-height: 850px) and (min-height: 800px) {
+      .row-0, .row-1 {
+        top: -1vh;
+      }
+
+      .center, .win-center {
+        margin: 27.2vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.2vh var(--horiz-marg);
+        } 
+      }
+
+      .nomis-text {
+        top: -1.25vh;
+      }
+    }
+
+    @media only screen and (max-height: 799px) and (min-height: 751px) {
+      .row-0, .row-1 {
+        top: -1.25vh;
+      }
+
+      .center, .win-center {
+        margin: 27.6vh var(--horiz-marg);
+      }
+
+
+
+      @media only screen and (min-height: 776px) {
+        .center, .win-center {
+          margin: 27.6vh var(--horiz-marg);
+        } 
+      }
+
+
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 25.84vh var(--horiz-marg);
+        } 
+
+        @media only screen and (min-height: 776px) {
+          .center, .win-center {
+            margin: 25.84vh var(--horiz-marg);
+          } 
+        }
+      }
+
+      .inner-frame, .btn-ctr {
+        margin: 4.2vh 2%;
+      }
+    }
+
+    @media only screen and (max-height: 750px) and (min-height: 700px) {
+      .row-0, .row-1 {
+        top: -1.5vh;
+      }
+
+      .center, .win-center {
+        margin: 27.6vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.10vh var(--horiz-marg);
+        } 
+
+
+
+        @media only screen and (min-height: 726px) {
+          .center, .win-center {
+            margin: 25.84vh var(--horiz-marg);
+          }
+        }
+      }
+
+      .inner-frame, .btn-ctr {
+        margin: 4.2vh 2%;
+      }
+    }
+
+    @media only screen and (min-height: 700px) and (max-width: 299px) {
+      .center {
+        height: 21vh;
+        width: 21vw;
+      }
+    }
+
+    @media only screen and (max-height: 699px) and (min-height: 600px) {
+      #level-title {
+        top: 5.6vh;
+      }
+      
+      .row-0, .row-1 {
+        top: -2vh;
+      }
+
+      .center, .win-center {
+        margin: 27.84vh var(--horiz-marg);
+      }
+
+      @media only screen and (min-width: 300px) {
+        .center, .win-center {
+          margin: 26.34vh var(--horiz-marg);
+        } 
+
+        @media only screen and (min-height: 626px) {
+          .center, .win-center {
+            margin: 26.34vh var(--horiz-marg);
+          } 
+
+          .btn {
+            height: 14vh;
+          }
+        }
+
+        @media only screen and (min-height: 651px) {
+          .center, .win-center {
+            margin: 26.34vh var(--horiz-marg);
+          } 
+
+          .btn {
+            height: 14.25vh;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 299px) {
+        .center {
+          height: 21vh;
+          width: 21vh;
+
+          margin: 27.4vh var(--horiz-marg);
+        }
+      }
+
+      .outer-frame {
+        height: 79vh;
+        top: 16.2vh;
+      }
+    }
+
+    @media only screen and (max-height: 599px) and (min-height: 500px) {
+      .row-0, .row-1 {
+        top: -3vh;
+      }
+
+      .center, .win-center {
+        margin: 27.56vh var(--horiz-marg);
+      }
+
+      @media only screen and (max-width: 299px) {
+        .center, .win-center {
+          margin: 27.62vh var(--horiz-marg);
+        }
+      }
+
+      .nomis-text {
+        top: -1vh;
+      }
+
+      #level-title {
+        top: 2.72vh;
+      }
+
+      .outer-frame {
+        top: 14.2vh;
+        height: 80vh;
+      }
+
+      .inner-frame, .btn-ctr {
+        margin: 4.7vh 2%;
+      }
+    }
+
+    @media only screen and (max-height: 499px) {
+      .row-0, .row-1 {
+        top: -1.5vh;
+      }
+
+      .center, .win-center {
+        margin: 28.47vh var(--horiz-marg);
+      }
+
+      
+      
+
+      #level-title {
+        top: 2.2vh;
+      }
+
+      .outer-frame {
+        top: 12.7vh;
+        height: 81vh;
+      }
+
+      
+      .nomis-text {
+        top: -1.5vh;
+      }
+
+      
+      @media only screen and (max-height: 399px) {
+        .center, .win-center {
+          margin: 28.84vh var(--horiz-marg);
+        }
+
+        .nomis-text {
+          top: -1vh;
+        }
+      }
+
+      @media only screen and (min-height: 400px) {
+        .outer-frame {
+          height: 84vh;
+        }
+
+        .nomis-text {
+          top: -1vh;
+        }
+      }
+
+      
+
+      @media only screen and (max-height: 475px) {
+        .row-0, .row-1 {
+          top: -2vh;
+        } 
+      }
+
+
+      @media only screen and (min-height: 426px) {
+        .center, .win-center {
+          margin: 28.51vh var(--horiz-marg);
+        }
+      }
+
+
+      @media only screen and (min-height: 451px) {
+        .center, .win-center {
+          margin: 28.6vh var(--horiz-marg);
+        }
+      }
+
+      @media only screen and (min-height: 476px) {
+        .center, .win-center {
+          margin: 29.2vh var(--horiz-marg);
+        }
+      }
+
+      
+    }
+  }
+
+
+  @media only screen and (max-height: 399px) {
+    #level-title {
+      top: 1.7vh;
+    }
+
+    .outer-frame {
+      top: 12.2vh;
+      height: 84vh;
+    }
+
+    .btn {
+      height: 14vh;
+    }
+
+    .row-0, .row-1 {
+      top: 0vh;
+    } 
+
+    @media only screen and (max-height: 375px) {
+      .row-0, .row-1 {
+        top: -1vh;
+      } 
+    }
+
+    @media only screen and (max-height: 351px) {
+      .row-0, .row-1 {
+        top: -2vh;
+      } 
+    }
+  }
+  
+
+  @media only screen and (max-height: 299px) {
+    #level-title {
+      top: 0vh;
+    }
+
+    .outer-frame {
+      top: 9.7vh;
+      height: 84vh;
+    }
+
+    .btn {
+      height: 10vh;
+    }
+
+    .inner-frame, .btn-ctr {
+      margin: 1.4vh 2%;
+    }
+
+    .skill-level {
+      top: 12vh;
+      height: 85vh;
+      width: 89%;
+    }
+
+    .skill-btn-btn {
+      height: 8.14vh;
+      line-height: 8.14vh;
+    }
+
+    .center {
+      margin: 26.84vh var(--horiz-marg);
+    }
+
+    @media only screen and (min-height: 251px) {
+      .btn {
+        height: 12vh;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 799px) {
+    .center {
+      border: 10px solid rgb(14,14,14);
+    }
+  }
+  
+}
+
+
+@media only screen and (orientation: landscape) {
+  #level-title {
+    width: 92%;
+    margin: 0 4%;
+    position: absolute;
+    top: 2vh;
+    left: 0;
+    right: unset;
+    font-size: 0.75em;
+    height: 15vh;
+    line-height: 14vh;
+    opacity: 0.92;
+  }
+
+  .skill-level {
+    width: 92%;
+    height: 82vh;
+    margin: 0 2%;
+    right: unset;
+  }
+
+  .skill-btn {
+    width: 100%;
+    margin: 5.32vh auto;
+  }
+
+  .skill-btn-btn {
+    width: 92%;
+  }
+
+  /*.nomis-body .menu-icon {
+    top: -3vh;
+    left: 0vw;
+  }*/
+
+  .container {
+    height: fit-content;
+    width: 100vw;
+  }
+
+  .outer-frame, .frame, .back-frame {
+    right: unset;
+    top: 8.88vh;
+    left: 0vw;
+    border-radius: 7%;
+    height: 74vh;
+  }
+
+  .outer-frame {
+    width: 100vw;
+  }
+
+  .frame, .back-frame {
+    width: 94%;
+    margin: 0;
+    border-width: 10px;
+  }
+
+  .inner-frame, .btn-ctr {
+    top: 0vh;
+    right: unset;
+    height: 100%;
+    width: 100%;
+  }
+
+  .btn-ctr {
+    display: flex;
+  }
+
+  .row-0, .row-1 {
+    top: 0vh;
+    margin: 0 0.32vw;
+    display: flex;
+  }
+
+  .btn {
+    height: 95%;
+    width: 19.25vw;
+    margin: 0vh -0.35vw;
+  }
+
+  .center {
+    right: unset;
+    bottom: unset;
+    height: 22vw;
+    width: 22vw;
+    margin: 5vh 33vw;
+  }
+
+  .nomis {
+
+  }
+
+  .nomis-overlay, .nomis {
+    height: 9.14vw;
+    line-height: 9.14vw;
+    border-radius: 10px;
+  }
+
+  .nomis {
+    top: 22%;
+  }
+
+  .nomis-overlay {
+    top: 29%;
+  }
+
+  .nomis-text {
+    font-size: 2em;
+    top: -0.9vh;
+  }
+
+
+  @media only screen and (max-width: 799px) {
+    .center {
+      border: 10px solid rgb(14,14,14);
+    }
+  }
+
+
+  @media only screen and (max-width: 499px) {
+    .center {
+      border: 7px solid rgb(14,14,14);
+    }
+
+    .frame, .back-frame {
+      border-width: 7px;
+    }
+  }
+
+
+  @media only screen and (max-width: 299px) {
+    #level-title {
+      font-size: 0.525em;
+      margin: 0;
+      width: 100%;
+    }
+
+    .skill-level {
+      margin: 0;
+      width: 100%;
+    }
+
+    .outer-frame, .frame, .back-frame {
+      top: 9.28vh;
+      height: 81vh;
+      width: 100%;
+    }
+
+    .btn {
+      height: 88%;
+    }
+
+    
+
+    @media only screen and (max-width: 250px) {
+      .center {
+        margin: var(--vert-marg) 36.34vw;
+      }
+    }
+
+    @media only screen and (min-width: 251px) and (max-width: 262px) {
+      .center {
+        margin: var(--vert-marg) 36.6vw;
+      }
+    }
+
+    @media only screen and (min-width: 263px) and (max-width: 275px) {
+      .center {
+        margin: var(--vert-marg) 36.6vw;
+      }
+    }
+
+    @media only screen and (min-width: 276px) and (max-width: 287px) {
+      .center {
+        margin: var(--vert-marg) 36.746vw;
+      }
+
+      .btn {
+        width: 17.96vw;
+      }
+
+      /*.btn {
+        height: 16.46vh;
+      }*/
+
+    }
+
+    @media only screen and (min-width: 288px) and (max-width: 299px) {
+      .center {
+        margin: var(--vert-marg) 36.746vw;
+      }
+
+      .btn {
+        width: 18.56vw;
+      }
+
+      /*.btn {
+        height: 16.46vh;
+      }*/
+
+    }
+    
+  }
+
+  @media only screen and (max-height: 499px) {
+    .skill-level {
+      height: 100%;
+    }
+
+    .btn {
+      height: 86%;
+    }
+
+    .skill-btn-btn {
+      height: 8.16vh;
+      line-height: 8.16vh;
+      font-size: 0.245em;
+    }
+
+    .row-0, .row-1 {
+      top: 1%;
+    }
+
+    @media only screen and (min-height: 251px) {
+      .btn {
+        height: 88%;
+      }
+    }
+
+    @media only screen and (min-height: 276px) {
+      .row-0, .row-1 {
+        top: 2%;
+      }
+
+      .btn {
+        height: 87%;
+      }
+      
+    }
+
+
+
+    @media only screen and (max-height: 299px) {
+      .skill-btn {
+        margin: 4.82vh auto;
+      }
+
+      .skill-btn-btn {
+        height: 9.28vh;
+        line-height: 9.28vh;
+        font-size: 0.245em;
+      }
+
+      @media only screen and (min-height: 276px) {
+        .skill-btn-btn {
+          height: 8.28vh;
+          line-height: 8.28vh;
+        }
+      }
+
+    }
+  }
+
+
+
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    #level-title {
+      font-size: 0.67em;
+    }
+
+    .outer-frame, .frame, .back-frame {
+      height: 76vh;
+    }
+
+    .frame, .back-frame {
+      margin: 0 0.75%;
+    }
+
+    
+
+    .center {
+      margin: 5vh 33.67vw;
+    }
+
+    .skill-btn {
+      margin: 4.96vh auto;
+    } 
+
+    
+  }
+
+  @media only screen and (min-width: 351px) {
+    .frame, .back-frame {
+      margin: 0 1%;
+    } 
+  }
+
+  @media only screen and (min-width: 337px) {
+    .center {
+      margin: 5vh 34vw;
+    }
+  }
+
+  @media only screen and (min-width: 300px) {
+    .skill-level {
+      width: 100vw;
+      margin: 0;
+      left: 0;
+    }
+
+    @media only screen and (max-height: 299px) {
+      .skill-btn-btn {
+        height: 8.64vh;
+        line-height: 8.64vh;
+      }
+
+      @media only screen and (min-width: 400px) {
+        .skill-btn {
+          margin: 4.64vh auto;
+        }
+
+        .outer-frame, .frame, .back-frame {
+          top: 9vh;
+        }
+
+        .frame, .back-frame {
+          margin: 0 1.25%;
+        }
+
+        .center {
+          margin: 5vh 34.25vw;
+        }
+        
+        @media only screen and (min-height: 226px) {
+          .btn {
+            height: 86.5%;
+          }
+
+          .row-0, .row-1 {
+            top: 1%;
+          }
+        }
+
+        @media only screen and (min-height: 251px) {
+          .outer-frame, .frame, .back-frame {
+            top: 9.28vh;
+          }
+
+          .btn {
+            height: 87.5%;
+          }
+        }
+      }
+    }
+  }
+
+  
+
+
+
+  @media only screen and (max-height: 399px) and (min-height: 300px) {
+
+    .outer-frame, .frame, .back-frame {
+      top: 9vh;
+    }
+  }
+
+
+
+  @media only screen and (min-width: 400px) {
+    @media only screen and (min-height: 300px) {
+      .outer-frame, .frame, .back-frame {
+        top: 9.54vh;
+      }
+
+      .skill-btn {
+        margin: 4.84vh auto;
+      }
+    }
+
+    .frame, .back-frame {
+      margin: 0 1.5%;
+    }
+
+    @media only screen and (min-height: 337px) {
+      .btn {
+        height: 88%;
+      }
+    }
+
+    @media only screen and (min-width: 405px) {
+      .btn {
+        width: 19.99vw;
+      }
+    }
+
+    @media only screen and (min-width: 451px) {
+      .center {
+        margin: 5vh 34.28vw;
+      }
+
+      .btn {
+        height: 88.62%;
+      }
+    }
+  }
+
+  @media only screen and (min-height: 400px) {
+    .btn {
+      height: 89.62%;
+    }
+  }
+
+  @media only screen and (min-height: 500px) {
+    .btn {
+      height: 90.62%;
+    }
+
+    .inner-frame, .btn-ctr {
+      top: 1.5vh;
+    }
+
+    .skill-btn {
+      margin: 5.55vh auto;
+    }
+  }
+
+  /*if(window.matchMedia("(min-width: 800px)").matches) {
+  borderWidth = '14px';
+} else if(landscapeN.matches && window.matchMedia("(max-width: 499px)").matches) {
+  borderWidth = '7px';
+} else {
+  borderWidth = '10px';
+}*/
+
+@media only screen and (max-height: 250px) {
+  .btn {
+    height: 86%;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  
+}
+
+@media only screen and (min-width: 600px) {
+  .center {
+    height: 20vw;
+    width: 20vw;
+
+    margin: 5vh 36.34vw;
+  }
+
+  .nomis-text {
+    top: -1.25vh;
+  }
+
+  .btn {
+    margin: 0vh 0vw;
+  }
+
+  .row-0, .row-1 {
+    margin: 0;
+  }
+
+  .frame, .back-frame {
+    width: 95.5%;
+    margin: 0 0.75%;
+  }
+
+  .skill-btn-btn {
+    font-size: 0.384em;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .center {
+    height: 19vw;
+    width: 19vw;
+
+    margin: 5vh 37.34vw;
+  }
+
+  .nomis-text {
+    top: -0.5vh;
+  }
+
+  .nomis-overlay, .nomis {
+    height: 8.14vw;
+    line-height: 8.14vw;
+  }
+
+  .nomis-overlay {
+    top: 31%;
+  }
+
+  .nomis {
+    top: 24%;
+  }
+}
+
+
+
+@media only screen and (min-width: 800px) {
+  .center {
+    margin: 5vh 36.72vw;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .center {
+    margin: 5vh 36.84vw;
+  }
+
+  .btn-ctr, .inner-frame {
+    position: absolute;
+    left: 0;
+  }
+}
+
+
+@media only screen and (min-height: 600px) {
+  .btn {
+    height: 91.62%;
+  }
+
+  #level-title {
+    top: 2.5vh;
+  }
+
+  .outer-frame, .frame, .back-frame {
+    top: 10.04vh;
+  }
+}
+
+
+@media only screen and (min-height: 700px) {
+  .btn {
+    height: 92.12%;
+  }
+}
+
+
+
+
+
+@media only screen and (min-width: 1000px) {
+  .center {
+    height: 21vw;
+    width: 21vw;
+
+    margin: 5vh 36.20vw;
+  }
+
+  .nomis-overlay {
+    top: -1.75vh;
+  }  
+
+  .nomis-overlay, .nomis {
+    height: 8.14vw;
+    line-height: 8.14vw;
+  }
+
+  .nomis-overlay, .nomis {
+    top: 29%;
+  }
+
+  .nomis-text {
+    top: -2.25vh;
+  }
+
+  .frame, .back-frame {
+    margin: 0vh 1.07%;
+  }
+
+  .skill-level {
+    width: 96vw;
+    margin: 0vh 2vw;
+  }
+
+  .skill-btn-btn {
+    font-size: 0.484em;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .nomis-text {
+    top: -1.75vh;
+  }
+}
+
+
+
+@media only screen and (min-height: 1000px) {
+  .btn {
+    height: 93.12%;
+  }
+}
+
+
+
+@media only screen and (min-height: 1200px) {
+  .btn {
+    height: 94.12%;
+  }
+}
+ 
+
+@media only screen and (min-width: 1300px) {
+  .skill-level {
+    top: 29vh;
+    height: 70vh;
+  }
+
+  .skill-btn {
+    margin: 4vh auto;
+  }
+
+  .skill-btn-btn {
+    font-size: 0.584em;
+  }
+
+  #level-title {
+    height: 12.5vh;
+    top: 14.9vh;
+  }
+
+  .outer-frame, .frame, .back-frame {
+    top: 15.54vh;
+    height: 63vh;
+  }
+
+  .frame, .back-frame {
+    margin: 0vh 1.20%;
+  }
+
+  .center {
+    height: 20vw;
+    width: 20vw;
+    margin: 5vh 36.7vw;
+  }
+
+  .nomis-text {
+    top: -1.75vh;
+  }
+
+  
+  @media only screen and (max-height: 699px) {
+
+    .outer-frame, .frame, .back-frame {
+      top: 14.54vh;
+      height: 65vh;
+    }
+
+    .nomis-text {
+      top: -2.25vh;
+    }
+  }
+
+
+
+  @media only screen and (max-height: 799px) {
+    #level-title {
+      height: 14.5vh;
+      top: 11.9vh;
+    }
+  
+    .outer-frame, .frame, .back-frame {
+      top: 14.54vh;
+      height: 66vh;
+    }
+
+    .skill-level {
+      top: 28vh;
+      height: 70vh;
+    }
+  
+    .skill-btn {
+      margin: 4.07vh auto;
+    }
+  }
+
+  @media only screen and (max-height: 2999px) {
+    .skill-level {
+      top: 29vh;
+      height: 69vh;
+    }
+  
+    .skill-btn {
+      margin: 3.60vh auto;
+    } 
+
+    @media only screen and (max-height: 999px) and (min-height: 800px) {
+      .skill-btn {
+        margin: 3.84vh auto;
+      }
+    }
+
+    @media only screen and (max-height: 799px) and (min-height: 500px) {
+      .skill-btn {
+        margin: 4vh auto;
+      }
+    }
+  }
+
+  @media only screen and (min-height: 1300px) {
+    .nomis-text {
+      top: -1.25vh;
+    }
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .frame, .back-frame {
+      margin: 0vh 1.44%;
+    }
+  }
+
+  @media only screen and (min-width: 1500px) {
+    .center {
+      margin: 5vh 36.96vw;
+    }
+  
+    .skill-btn-btn {
+      font-size: 0.634em;
+    }
+  }
+
+
+  @media only screen and (min-width: 1800px) {
+    .skill-btn-btn {
+      font-size: 0.684em;
+    }
+  }
+}
+
+}
+
+
+.btn {
+  border-radius: 6%;
+}
+
+.skill-btn-btn:focus {
+  outline: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .frame, .back-frame {
+    border-width: 14px;
+  }
+}
+
+@media only screen and (min-width: 1100px) and (orientation: landscape) {
+  .frame, .back-frame {
+    border-width: 16px;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (orientation: landscape) {
+  .frame, .back-frame {
+    border-width: 18px;
+  }
+}
+
+@media only screen and (min-width: 1900px) and (orientation: landscape) {
+  .frame, .back-frame {
+    border-width: 20px;
+  }
+}
+
+
+
+
+
+@media only screen and (min-width: 2000px) and (orientation: landscape) {
+  .center {
+    margin: 5vh 37vw;
+  }
+}
+
+
+
+@media only screen and (min-width: 2100px) and (orientation: landscape) {
+  .center {
+    margin: 5vh 37.16vw;
+  }
+}
+
+
+
+@media only screen and (max-height: 499px) and (orientation: portrait) {
+  /*.outer-frame, .frame, .back-frame {
+    left: 0;
+    width: 100%;
+  }*/
+  
+  .center, .frame {
+    border: 7px solid rgb(14,14,14);
+  }
+
+  .btn {
+    border-width: 7px;
+  }
+
+  .center {
+    height: 24vh;
+    width: 24vh;
+  }
+
+  .nomis, .nomis-overlay {
+    height: 8.32vh;
+    line-height: 8.32vh;
+    border-radius: 16px;
+    top: 26.5%;
+  }
+
+  .skill-level {
+    height: 86.5vh;
+    top: 12vh;
+    left: 0vw;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .skill-btn {
+    margin: 5.84vh auto;
+  }
+
+  .skill-btn-btn {
+    height: 8.14vh;
+    line-height: 8.14vh;
+  }
+
+  @media only screen and (max-height: 399px) {
+    #level-title {
+      font-size: 0.4em;
+      top: 0.84vh;
+    }
+
+    
+
+    .outer-frame {
+      top: 11vh;
+    }
+
+    .btn {
+      height: 13.75vh;
+    }
+
+    .center {
+      margin: 28.04vh var(--horiz-marg);
+    }
+
+
+    @media only screen and (min-height: 326px) {
+      .btn {
+        height: 14.3vh;
+      }
+
+      /*@media only screen and (min-width: 276px) {
+        .center {
+          margin: 27.84vh var(--horiz-marg);
+        }   
+      }*/
+    }
+
+    @media only screen and (min-height: 351px) {
+      .btn {
+        height: 14.6vh;
+      }
+
+      .center {
+        margin: 28.12vh var(--horiz-marg);
+      }
+    }
+
+
+
+    @media only screen and (min-height: 376px) {
+      .btn {
+        height: 14.14vh;
+      }
+      
+      .center {
+        margin: 28.12vh var(--horiz-marg);
+      }
+    }
+
+    
+    
+  }
+
+  @media only screen and (max-height: 299px) {
+    .btn {
+      height: 12.5vh;
+    }
+
+    #level-title {
+      font-size: 0.25em;
+    }
+
+    .nomis-text {
+      top: -1.5vh;
+    }
+
+    
+    @media only screen and (max-height: 250px) {
+      .center {
+        margin: 26.84vh var(--horiz-marg);
+      }
+    }
+
+
+    @media only screen and (min-height: 251px) {
+      .btn {
+        height: 13.5vh;
+      }
+
+      .skill-level {
+        height: 86.5vh;
+      }
+
+      .center {
+        margin: 27.84vh var(--horiz-marg);
+      }
+    }
+
+    @media only screen and (min-height: 276px) {
+      .outer-frame {
+        top: 10.7vh;
+      }
+
+      #level-title {
+        top: 1vh;
+      }
+
+      .btn {
+        height: 14.5vh;
+      }
+
+      .center {
+        margin: 28.34vh var(--horiz-marg);
+      }
+    }
+  }
+
+
+  @media only screen and (min-height: 600px) and (max-width: 299px) {
+    .center {
+      height: 20vh;
+      width: 20vh;
+    }
+  }
+
+
+
+  
+
+}
+
+
+
+@media only screen and (max-width: 299px) and (orientation: portrait) {
+  .btn {
+    width: 86.5%;
+  }
+
+  
+}
+
+
+
+.nomis-body .menu-icon {
+  opacity: 0.14;
+}
+
+.nomis-body .top-left {
+  opacity: 0.10;
+}
+
+
+
+@media only screen and (orientation: portrait) and (min-height: 700px) and (min-width: 400px) {
+  .skill-btn-btn {
+    font-size: 0.367em;
+  }
+}
+
+
+
+
+@media only screen and (orientation: portrait) {
+  @media only screen and (min-height: 1700px) {
+    .skill-btn-btn {
+      
+    }    
+  }
+
+  @media only screen and (max-height: 1699px) {
+    
+  }
+
+  @media only screen and (max-height: 1599px) {
+    
+  }
+
+  @media only screen and (max-height: 1499px) {
+    
+  }
+
+  @media only screen and (max-height: 1399px) {
+    
+  }
+
+  @media only screen and (max-height: 1299px) {
+    
+  }
+
+  @media only screen and (max-height: 1199px) {
+    
+  }
+
+  @media only screen and (max-height: 1099px) {
+    
+  }
+
+  @media only screen and (max-height: 999px) {
+    
+  }
+
+  @media only screen and (max-height: 899px) {
+    
+  }
+
+  @media only screen and (max-height: 799px) {
+    
+  }
+
+  @media only screen and (max-height: 699px) {
+    
+  }
+
+  @media only screen and (max-height: 599px) {
+    
+  }
+
+  @media only screen and (max-height: 499px) {
+    
+  }
+
+  @media only screen and (max-height: 399px) {
+    
+  }
+
+  @media only screen and (max-height: 299px) {
+    
+  }
+  
+}
+
+
+
+
+
+
+/*@media only screen and (max-height: 499px) {
+    .skill-btn-btn {
+      font-size: 0.267em;
+    }
+  }
+
+  @media only screen and (max-height: 699px) and (min-height: 600px) {
+    .skill-btn-btn {
+      font-size: 0.342em;
+    }
+  }*/
+
+
+  .skill-btn-dark {
+    background-color: rgb(196,0,196);
+  }
+
+  .skill-btn-illum {
+    background-color: rgb(0,176,176);    
+  }
+
+
+
+
+
+  .center {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }

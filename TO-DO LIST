@@ -1,0 +1,78 @@
+
+(3) Fix issue with starting new game after losing/winning a game
+
+(4) Fix annoying OVAL issue on youLose()
+
+(5) Stack pieces horizontally instead of vertically in small mobile landscape
+
+(6) Make large mobiles and desktop devices have appearance of actual game board
+
+(7) Address WIN screen appearance and adapt to various screen sizes
+
+(8) Address LOSE screen appearance and adapt to various screen sizes
+
+(9) When transitioning from youLose to startGame, remember to reset the counter that delays moves.
+
+(10) When transitioning from youWin to startGame, make sure board is back to initial state. Also ensure that "you're still trying to win" does not play when selecting skill level, and that "We Are The Champions" stops playing.
+
+
+
+
+
+
+
+ratio = vh / vw
+
+2hm = vm / ratio
+
+1/2(2hm) = 2hm / 2
+
+hm = 2hm / 2
+
+hm = hm - 0.5
+
+
+
+ratio = vw / vh
+
+hm = ratio * vm
+
+
+
+173.04500000000002
+
+
+
+
+
+20vh = (x)vw
+
+1/5(653) = x(280)
+
+130.6 * 100 = 280x
+
+(130.6 / 280) * 100 = x
+
+x = 46.6vw
+
+
+
+46.6 + (x*2) = 92
+
+92 - 46.6 = x * 2
+
+45.4 = x * 2
+
+45.4 / 2 = x
+
+22.7
+
+
+
+
+
+46.6 + (x*2) = 84
+
+2x = 37.4
+
+x = 18.7vw
