@@ -504,17 +504,17 @@ function getReady(key) {
     } else if (key === '3') {
       cpuSpeed = 107;
       passSpeed = 714;
-      levels = 18;
+      levels = 20;
       tauntFreq = 14014;
     } else if (key === '4') {
       cpuSpeed = 84;
       passSpeed = 614;
-      levels = 20;
+      levels = 24;
       tauntFreq = 12014;
     } else if (key === '5') {
       cpuSpeed = 84;
       passSpeed = 614;
-      levels = 24;
+      levels = 28;
       tauntFreq = 10014;
     }
 
