@@ -618,8 +618,11 @@ function startGame() {
       frame.style.cssText = `border: ${borderWidth}px solid rgb(0,176,176); background-color: rgb(20,20,20);`;
       nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
       // nomisText top: ${nomisWA[8]}; 
-      nomisText.style.cssText = `font-size: ${nomisWA[2]}; animation: nomis-loser 296ms 6 ease-in-out;`;
-      nomisOverlay.style.cssText = `animation: nomis-overlay-flash 296ms 6 ease-in-out;`;
+      /*nomisText.style.cssText = `font-size: ${nomisWA[2]}; animation: nomis-loser 296ms 6 ease-in-out;`;
+      nomisOverlay.style.cssText = `animation: nomis-overlay-flash 296ms 6 ease-in-out;`;*/
+      
+      nomisText.style.cssText = `font-size: ${nomisWA[2]}; animation: nomis-loser 1776ms 1 ease-in-out;`;
+      nomisOverlay.style.cssText = `animation: nomis-overlay-flash 1776ms 1 ease-in-out;`;
       levelTitle.style.cssText = `font-size: ${nomisWA[3]}; background-color: rgb(0,176,176); animation: none;`;
       
       if(portraitN.matches) {
@@ -696,8 +699,13 @@ function startGame() {
     nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
 
     // nomisText top: ${nomisWA[8]};
-    nomisText.style.cssText = `font-size: ${nomisWA[2]}; animation: nomis-loser 296ms 6 ease-in-out;`;
+    /*
+     nomisText.style.cssText = `font-size: ${nomisWA[2]}; animation: nomis-loser 296ms 6 ease-in-out;`;
     nomisOverlay.style.cssText = `animation: nomis-overlay-flash 296ms 6 ease-in-out;`;
+     */
+
+    nomisText.style.cssText = `font-size: ${nomisWA[2]}; animation: nomis-loser 1776ms 1 ease-in-out;`;
+    nomisOverlay.style.cssText = `animation: nomis-overlay-flash 1776ms 1 ease-in-out;`;
 
     levelTitle.style.cssText = `font-size: ${nomisWA[3]}; background-color: rgb(0,176,176); animation: none;`;
     
@@ -1105,8 +1113,13 @@ function youLose() {
     nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
 
     // nomisText top: ${nomisWA[8]};
-    nomisText.style.cssText = `font-size: ${nAlign[2]}; animation: nomis-loser 296ms 6 ease-in-out;`;
-    nomisOverlay.style.cssText = `animation: nomis-overlay-flash 296ms 6 ease-in-out;`;
+    /*
+      nomisText.style.cssText = `font-size: ${nAlign[2]}; animation: nomis-loser 296ms 6 ease-in-out;`;
+      nomisOverlay.style.cssText = `animation: nomis-overlay-flash 296ms 6 ease-in-out;`;
+    */
+
+      nomisText.style.cssText = `font-size: ${nAlign[2]}; animation: nomis-loser 1776ms 1 ease-in-out;`;
+      nomisOverlay.style.cssText = `animation: nomis-overlay-flash 1776ms 1 ease-in-out;`;
 
     if(portraitN.matches && mobileNP.matches) {
       //  left: 0vw; margin-left: ${nAlign[1]}vw;
@@ -1272,8 +1285,13 @@ function youLose() {
         nomis.style.cssText = `background-color: rgb(22,22,22); border-top: 4px solid rgb(14,14,14); border-bottom: 4px solid rgb(14,14,14);`;
       }, 4144);
 
+      /*
       nomisText.style.cssText = `font-size: ${nAlign[2]}; top: ${nAlign[8]}; animation: nomis-loser 296ms 14 ease-in-out;`;
       nomisOverlay.style.cssText = `animation: nomis-overlay-flash 296ms 14 ease-in-out;`;
+      */
+
+      nomisText.style.cssText = `font-size: ${nAlign[2]}; top: ${nAlign[8]}; animation: nomis-loser 4116ms 1 ease-in-out;`;
+      nomisOverlay.style.cssText = `animation: nomis-overlay-flash 4116ms 1 ease-in-out;`;
 
 
       audio3.play();

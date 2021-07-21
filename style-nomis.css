@@ -822,7 +822,8 @@ html {
 
   to {
     /*background: -webkit-linear-gradient(rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196), rgb(234,0,196));*/
-    background: -webkit-linear-gradient(rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));
+    /*background: -webkit-linear-gradient(rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128), rgb(128, 128, 128));*/
+    background: -webkit-linear-gradient(rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255), rgb(0, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
