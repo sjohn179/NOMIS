@@ -55,7 +55,7 @@ setTimeout(() => {
 
 // center.addEventListener('click',preStart);
 
-document.body.addEventListener('click',preStart)
+document.body.addEventListener('click',prePreStart)
 
 /*
 menuIconN.addEventListener('mouseover', function() {
