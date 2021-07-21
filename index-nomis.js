@@ -1124,7 +1124,7 @@ function youLose() {
   setTimeout(() => {
     wpf.play();
     // revert to 2688 if Shao Kahn
-  }, 2688);
+  }, 2588);
 
 
   majorTimeout = setTimeout(() => {
