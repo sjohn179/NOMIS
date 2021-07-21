@@ -1124,7 +1124,7 @@ function youLose() {
   setTimeout(() => {
     wpf.play();
     // revert to 2688 if Shao Kahn
-  }, 2588);
+  }, 2188);
 
 
   majorTimeout = setTimeout(() => {
@@ -1308,7 +1308,7 @@ function youLose() {
     }, 14019);
 
     // revert to 5114 if I switch back to Shao Kahn
-  }, 5114);
+  }, 4614);
 
 
   if(portraitN.matches && window.matchMedia("(max-width: 399px)").matches) {
