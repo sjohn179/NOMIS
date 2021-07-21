@@ -53,9 +53,9 @@ setTimeout(() => {
 
 
 
-center.addEventListener('click',preStart);
+// center.addEventListener('click',preStart);
 
-document.body.addEventListener('click',() => alert("SHUT UP WHEN I'M TALKING TO YOOOOU"))
+document.body.addEventListener('click',preStart)
 
 /*
 menuIconN.addEventListener('mouseover', function() {
