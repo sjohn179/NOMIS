@@ -60,6 +60,10 @@ const loserHaha = new Audio('sounds/loser/haha.mp3');
 
 const loserTaunts = [taunt1, taunt2, taunt4, taunt5, taunt6, taunt7, taunt8, best, wpf];
 
+const greenPress = new Audio('sounds/green.mp3');
+const redPress = new Audio('sounds/red.mp3');
+const yellowPress = new Audio('sounds/yellow.mp3');
+const bluePress = new Audio('sounds/blue.mp3');
 
 // audio3 = new Audio();
 
@@ -146,8 +150,8 @@ function preStart(event) {
   if(initiated === false && started === false) {
     startUp();
     initiated = true;
-    console.log(`i: ${initiated}`);
-    console.log(`s: ${started}`);
+    // console.log(`i: ${initiated}`);
+    // console.log(`s: ${started}`);
   } else if(initiated === true && started === false) {
     initiated = false;
 
@@ -155,7 +159,7 @@ function preStart(event) {
 
     getReady(key);
   } else {
-    console.log('Ineffective Key Press.');
+    // console.log('Ineffective Key Press.');
   }
 
   alignNomis();
@@ -197,10 +201,10 @@ function preStart(event) {
     setTimeout(() => {
       // randNum = Math.floor(Math.random() * 4);
 
-      // console.log(`randNum: ${randNum}`);
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`randNum: ${randNum}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
       getCPUInput(moveArr);
     }, 1414);
@@ -208,10 +212,10 @@ function preStart(event) {
     setTimeout(() => {
       // randNum = Math.floor(Math.random() * 4);
 
-      // console.log(`randNum: ${randNum}`);
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`randNum: ${randNum}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
       getCPUInput(moveArr);
     }, 2828);
@@ -798,10 +802,10 @@ function startGame() {
       setTimeout(() => {
         // randNum = Math.floor(Math.random() * 4);
 
-        // console.log(`randNum: ${randNum}`);
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`randNum: ${randNum}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
         getCPUInput(moveArr);
       }, 2214);
@@ -809,10 +813,10 @@ function startGame() {
       setTimeout(() => {
         // randNum = Math.floor(Math.random() * 4);
 
-        // console.log(`randNum: ${randNum}`);
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`randNum: ${randNum}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
         getCPUInput(moveArr);
       }, 2214);
@@ -831,7 +835,7 @@ function pressButton(e) {
 
   document.getElementById(`${el}`).classList.add('pressed');
 
-  console.log(`el: ${el}`);
+  // console.log(`el: ${el}`);
 
   /*if(moveArr.length <= userMoveArr.length) {
     randNum = Math.floor(Math.random() * 3);
@@ -843,22 +847,28 @@ function pressButton(e) {
     }
   }*/
 
+
+  // YOU ARE HERE
   if (el === 'green') {
-    audio1 = new Audio('sounds/green.mp3');
-    audio1.play();
-    // console.log('green');
+    greenPress.pause();
+    greenPress.currentTime = 0;
+    greenPress.play() * 2;
+      console.log('green pressed');
   } else if (el === 'red') {
-    audio1 = new Audio('sounds/red.mp3');
-    audio1.play();
-    // console.log('red');
+    redPress.pause();
+    redPress.currentTime = 0;
+    redPress.play() * 2;
+      console.log('red pressed');
   } else if (el === 'yellow') {
-    audio1 = new Audio('sounds/yellow.mp3');
-    audio1.play();
-    // console.log('yellow');
+    yellowPress.pause();
+    yellowPress.currentTime = 0;
+    yellowPress.play() * 2;
+      console.log('yellow pressed');
   } else if (el === 'blue') {
-    audio1 = new Audio('sounds/blue.mp3');
-    audio1.play();
-    // console.log('blue');
+    bluePress.pause();
+    bluePress.currentTime = 0;
+    bluePress.play() * 2;
+      console.log('blue pressed');
   }
   // put into place so that button highlight is removed 614ms after it is clicked
   setTimeout(() => {
@@ -875,8 +885,8 @@ function verifyCorrect(moveArr, userMoveArr) {
   let result;
 
   for (let i = 0; i < userMoveArr.length; i++) {
-    /*console.log(`userMoveArr[i]: ${userMoveArr[i]}`);
-    console.log(`moveArr[i]: ${moveArr[i]}`);*/
+    /*// console.log(`userMoveArr[i]: ${userMoveArr[i]}`);
+    // console.log(`moveArr[i]: ${moveArr[i]}`);*/
 
     if (userMoveArr[i] !== moveArr[i]) {
       result = false;
@@ -933,8 +943,8 @@ function getUserInput(moveArr, userMoveArr) {
 
         res = verifyCorrect(moveArr, userMoveArr);
         /*
-                console.log(`moveArr: ${moveArr}`);
-                console.log(`userMoveArr: ${userMoveArr}`);*/
+                // console.log(`moveArr: ${moveArr}`);
+                // console.log(`userMoveArr: ${userMoveArr}`);*/
 
         if (res && moveArr.length === userMoveArr.length && iterations === levels) {
             getCPUInput(moveArr);
@@ -959,8 +969,8 @@ function getUserInput(moveArr, userMoveArr) {
 
   type = 'user';
 
-  console.log(`userMoveArr.length: ${userMoveArr.length}`);
-  console.log(`moveArr.length: ${moveArr.length}`);
+  // console.log(`userMoveArr.length: ${userMoveArr.length}`);
+  // console.log(`moveArr.length: ${moveArr.length}`);
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(event) {
@@ -981,8 +991,8 @@ function getUserInput(moveArr, userMoveArr) {
       if (userMoveArr.length < moveArr.length) {
         userMoveArr.push(el);
 
-        console.log(`moveArr: ${moveArr}`);
-        console.log(`userMoveArr: ${userMoveArr}`);
+        // console.log(`moveArr: ${moveArr}`);
+        // console.log(`userMoveArr: ${userMoveArr}`);
 
         res = verifyCorrect(moveArr, userMoveArr);
 
@@ -1026,7 +1036,7 @@ function getCPUInput(moveArr) {
     youWin();
 
   } else if (iterations <= levels) {
-    console.log('');
+    // console.log('');
     randNum = Math.floor(Math.random() * 4);
     moveArr.push(randNum);
 
@@ -1057,8 +1067,8 @@ function getCPUInput(moveArr) {
 
 
 
-        console.log(`Iteration ${iterations}, Move ${i}: ${moveArr[i]}`);
-        //console.log(`moveArr: ${moveArr}`);
+        // console.log(`Iteration ${iterations}, Move ${i}: ${moveArr[i]}`);
+        //// console.log(`moveArr: ${moveArr}`);
       }, 614 * i);
     }
 
@@ -1119,12 +1129,12 @@ function youLose() {
     best.play();
 
     // revert to 1014 if Shao Kahn is used
-  }, 1014);
+  }, 815);
 
   setTimeout(() => {
     wpf.play();
     // revert to 2688 if Shao Kahn
-  }, 2188);
+  }, 2088);
 
 
   majorTimeout = setTimeout(() => {
@@ -1208,7 +1218,7 @@ function youLose() {
     }, 1776);
 
 
-    // YOU ARE HERE
+    
     myInterval = setInterval(() => { 
       randSong = Math.floor(Math.random() * 9);
 
@@ -1308,7 +1318,7 @@ function youLose() {
     }, 14019);
 
     // revert to 5114 if I switch back to Shao Kahn
-  }, 4614);
+  }, 4416);
 
 
   if(portraitN.matches && window.matchMedia("(max-width: 399px)").matches) {
@@ -1395,7 +1405,11 @@ function pauseAudio() {
     lose.pause();
     lose.currentTime = 0;
 
-    currTaunt.pause();
+    if(currTaunt) {
+      currTaunt.pause();
+    }
+
+
     loserHaha.pause();  
 
   
@@ -2029,7 +2043,7 @@ function alignNomis() {
       }
     
     
-      console.log(`alert: ${calcMarginH}`);
+      // console.log(`alert: ${calcMarginH}`);
   
   
       if(window.matchMedia("(min-width: 1200px)").matches) {
@@ -2936,7 +2950,7 @@ function alignNomis() {
 
           let altWidthCalc = ((windowHeight * 0.2) / windowWidth) * 100;
 
-          console.log(`widthCalc: ${widthCalc}, altWidthCalc: ${altWidthCalc}`);
+          // console.log(`widthCalc: ${widthCalc}, altWidthCalc: ${altWidthCalc}`);
 
 
           
@@ -7147,8 +7161,8 @@ function alignNomis() {
   
       // document.querySelector('.win-center').style.cssText = `width: ${widthCalc}vw; left: ${calcMarginH}vw;`;
 
-      console.log(`HEIGHT CALC: ${heightCalc}`);
-      console.log(`CALC MARGIN V: ${calcMarginV}`);
+      // console.log(`HEIGHT CALC: ${heightCalc}`);
+      // console.log(`CALC MARGIN V: ${calcMarginV}`);
  
       return [widthCalc, calcMarginH, nomisFontSize, levelFontSize, levelChoiceFontSize, calcMarginV, heightCalc, btnWidth, nomisTextAlign, winLevelLineHeight, gameOverFontSize, gameOverLineHeight, winLevelFontSize, portraitMarginV];
     
