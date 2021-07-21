@@ -39,9 +39,34 @@ const landscapeN = window.matchMedia("(orientation: landscape)");
 const mobileNP = window.matchMedia("(max-width: 1400px)");
 const smallMedMobileNL = window.matchMedia("(max-height: 1068px)");
 
+const taunt0 = new Audio('sounds/rule.mp3');
+const taunt1 = new Audio('sounds/loser/bow.mp3');
+const taunt2 = new Audio('sounds/nothing.mp3');
+const taunt3 = new Audio('sounds/die.mp3');
+const taunt4 = new Audio('sounds/loser/dont-make-me-laugh.mp3');
+const taunt5 = new Audio('sounds/loser/never.mp3');
+const taunt6 = new Audio('sounds/easy.mp3');
+const taunt7 = new Audio('sounds/loser/pathetic.mp3');
+const taunt8 = new Audio('sounds/loser/u-suck.mp3');
+
+const taunts = [taunt0, taunt1, taunt2, taunt3, taunt4, taunt5, taunt6];
+
+const wrong = new Audio('sounds/wrong.mp3');
+const lose = new Audio('sounds/loser/lose.mp3');
+const best = new Audio('sounds/loser/your-best.mp3');
+const wpf = new Audio('sounds/loser/wpf.mp3');
+const loserHaha = new Audio('sounds/loser/haha.mp3');
+
+
+const loserTaunts = [taunt1, taunt2, taunt4, taunt5, taunt6, taunt7, taunt8, best, wpf];
+
+
+// audio3 = new Audio();
+
+
 const skillLevels = 6;
 
-let moveArr, userMoveArr, randNum, iterations, type, first, audio1, audio2, audio3, startLaugh, eyeInterval, simonMIDI, started, btnKey, levels, cpuSpeed, ticker, taunt, taunt2, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign;
+let moveArr, userMoveArr, randNum, iterations, type, first, audio1, audio2, audio3, startLaugh, eyeInterval, simonMIDI, started, btnKey, levels, cpuSpeed, ticker, taunt, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign, currTaunt;
 
 let windowHeight, windowWidth, widthCalc, calcMarginH, calcMarginV, borderWidth, shadowWidth, shadowWidthInGame, wideAndShort, extraWideAndShort, extraExtraWideAndShort, tallAndNarrow, tallAndNarrowPortrait, won;
 
@@ -569,25 +594,11 @@ function startGame() {
 
   let nomisWA = alignNomis();
 
+
   setTimeout(() => {
     let randTaunt = Math.floor(Math.random() * 4);
 
-    switch (randTaunt) {
-      case 0:
-        taunt = new Audio('sounds/rule.mp3');
-        break;
-      case 1:
-        taunt = new Audio('sounds/loser/bow.mp3');
-        break;
-      case 2:
-        taunt = new Audio('sounds/nothing.mp3');
-        break;
-      case 3:
-        taunt = new Audio('sounds/die.mp3');
-        break;
-    }
-
-    taunt.play();
+    taunts[randTaunt].play();
 
         /*const rule = new Audio('sounds/rule.mp3');
         rule.play();*/
@@ -595,6 +606,7 @@ function startGame() {
     tauntInterval = setInterval(() => {
       let randTaunt2 = Math.floor(Math.random() * 7);
 
+      /*
       switch (randTaunt2) {
         case 0:
           taunt2 = new Audio('sounds/rule.mp3');
@@ -619,7 +631,11 @@ function startGame() {
           break;
       }
 
-      taunt2.play();
+      taunt2.play();*/
+
+      taunts[randTaunt2].play();
+
+
 
       frame.style.cssText = `border: ${borderWidth}px solid rgb(0,176,176); background-color: rgb(20,20,20);`;
       nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
@@ -1077,14 +1093,13 @@ function youLose() {
 
   widthValN = `${nAlign[0]}vw`;
 
-  audio1 = new Audio('sounds/wrong.mp3');
-  audio1.play();
 
-  audio2 = new Audio('sounds/loser/lose.mp3');
-  audio2.loop = true;
-  audio2.play();
+  wrong.play();
 
-  audio3 = new Audio();
+  lose.loop = true;
+  lose.play();
+
+  // audio3 = new Audio();
 
   bodyOverlay.style.cssText = `visibility: visible;`;
   nomisBody.style.cssText = `text-align: center; background: url(skulls.jpg); background-size: cover;`;
@@ -1098,23 +1113,22 @@ function youLose() {
     nomisBody.style.cssText = `text-align: center; background: url(skulls.jpg); background-size: cover; overflow: hidden;`;
   }, 414);
 
+
+
   setTimeout(() => {
-    audio1 = new Audio('sounds/loser/your-best.mp3');
-    audio1.play();
+    best.play();
 
     // revert to 1014 if Shao Kahn is used
   }, 1014);
 
   setTimeout(() => {
-    audio1 = new Audio('sounds/loser/wpf.mp3');
-    audio1.play();
+    wpf.play();
     // revert to 2688 if Shao Kahn
   }, 2688);
 
 
   majorTimeout = setTimeout(() => {
-    audio1 = new Audio('sounds/loser/haha.mp3');
-    audio1.play();
+    loserHaha.play();
 
     nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
 
@@ -1193,38 +1207,14 @@ function youLose() {
       nomisText.style.cssText = `font-size: ${nAlign[2]}; background: -webkit-linear-gradient(rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 103;`;
     }, 1776);
 
+
+    // YOU ARE HERE
     myInterval = setInterval(() => { 
       randSong = Math.floor(Math.random() * 9);
 
-      switch (randSong) {
-        case 0:
-          audio3 = new Audio('sounds/loser/bow.mp3');
-          break;
-        case 1:
-          audio3 = new Audio('sounds/loser/dont-make-me-laugh.mp3');
-          break;
-        case 2:
-          audio3 = new Audio('sounds/loser/never.mp3');
-          break;
-        case 3:
-          audio3 = new Audio('sounds/loser/pathetic.mp3');
-          break;
-        case 4:
-          audio3 = new Audio('sounds/loser/u-suck.mp3');
-          break;
-        case 5:
-          audio3 = new Audio('sounds/loser/wpf.mp3');
-          break;
-        case 6:
-          audio3 = new Audio('sounds/loser/your-best.mp3');
-          break;
-        case 7:
-          audio3 = new Audio('sounds/easy.mp3');
-          break;
-        case 8:
-          audio3 = new Audio('sounds/nothing.mp3');
-          break;
-      }
+      currTaunt = loserTaunts[randSong];
+
+      currTaunt.play();
 
       if(portraitN.matches && mobileNP.matches) {
         //  left: 0vw; margin-left: ${nAlign[1]}vw;
@@ -1300,7 +1290,7 @@ function youLose() {
       nomisOverlay.style.cssText = `animation: nomis-overlay-flash 4116ms 1 ease-in-out;`;
 
 
-      audio3.play();
+      currTaunt.play();
 
       // font-size: 84px; (BELOW)
       setTimeout(() => {
@@ -1312,8 +1302,8 @@ function youLose() {
 
 
       hahaTimeout = setTimeout(() => {
-        audio1.play();
-      }, 2214);
+        loserHaha.play();
+      }, 2116);
 
     }, 14019);
 
@@ -1402,9 +1392,11 @@ function pauseTaunts() {
 function pauseAudio() {
 
 
-    audio1.pause();
-    audio2.pause();
-    audio3.pause();  
+    lose.pause();
+    lose.currentTime = 0;
+
+    currTaunt.pause();
+    loserHaha.pause();  
 
   
   
