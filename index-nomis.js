@@ -99,7 +99,7 @@ window.addEventListener('load', alignNomis);
 
 window.addEventListener('keypress', preStart);
 
-window.addEventListener('click', prePreStart);
+// window.addEventListener('click', prePreStart);
 
 window.addEventListener('orientationchange',function() {
   setTimeout(() => {
