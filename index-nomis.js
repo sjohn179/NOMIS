@@ -52,10 +52,10 @@ setTimeout(() => {
 },1648);
 
 
-
+/*
 center.addEventListener('click',() => {
   alert('CLICKED')
-});
+});*/
 
 /*
 menuIconN.addEventListener('mouseover', function() {
