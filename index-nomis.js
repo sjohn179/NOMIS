@@ -51,6 +51,12 @@ setTimeout(() => {
   // menuIconN.style.opacity = '0.14';
 },1648);
 
+
+
+center.addEventListener('click',() => {
+  alert('CLICKED')
+});
+
 /*
 menuIconN.addEventListener('mouseover', function() {
   menuIconN.style.opacity = '0.62';
