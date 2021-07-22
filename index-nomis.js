@@ -848,26 +848,18 @@ function pressButton(e) {
   }*/
 
 
-  // YOU ARE HERE
+  
   if (el === 'green') {
-    greenPress.pause();
-    greenPress.currentTime = 0;
-    greenPress.play() * 2;
+    greenPress.play();
       console.log('green pressed');
   } else if (el === 'red') {
-    redPress.pause();
-    redPress.currentTime = 0;
-    redPress.play() * 2;
+    redPress.play();
       console.log('red pressed');
   } else if (el === 'yellow') {
-    yellowPress.pause();
-    yellowPress.currentTime = 0;
-    yellowPress.play() * 2;
+    yellowPress.play();
       console.log('yellow pressed');
   } else if (el === 'blue') {
-    bluePress.pause();
-    bluePress.currentTime = 0;
-    bluePress.play() * 2;
+    bluePress.play();
       console.log('blue pressed');
   }
   // put into place so that button highlight is removed 614ms after it is clicked
@@ -958,7 +950,7 @@ function getUserInput(moveArr, userMoveArr) {
           youLose();
         }
         // find way to alter these times, based on skill level selected by user
-      }, 1414 + (passSpeed * (moveArr.length)));
+      }, 1916 + (passSpeed * (moveArr.length)));
     }
   }
 
