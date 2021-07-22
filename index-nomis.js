@@ -70,13 +70,15 @@ const bluePress = new Audio('sounds/blue.mp3');
 
 const skillLevels = 6;
 
-let moveArr, userMoveArr, randNum, iterations, type, first, audio1, audio2, audio3, startLaugh, eyeInterval, simonMIDI, started, btnKey, levels, cpuSpeed, ticker, taunt, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign, currTaunt;
+let moveArr, userMoveArr, randNum, iterations, type, first, audio1, audio2, audio3, eyeInterval, started, btnKey, levels, cpuSpeed, ticker, taunt, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign, currTaunt;
 
 let windowHeight, windowWidth, widthCalc, calcMarginH, calcMarginV, borderWidth, shadowWidth, shadowWidthInGame, wideAndShort, extraWideAndShort, extraExtraWideAndShort, tallAndNarrow, tallAndNarrowPortrait, won;
 
+const startLaugh = new Audio('sounds/haha-start.mp3');
 
+const simonMIDI = new Audio('sounds/simonsays.mp3');
 
-const sounds = [noTaunt, trying, obstruction, ejecting, congratulations, thanks, noMore, peace, taunt0, taunt1, taunt2, taunt3, taunt4, taunt5, taunt6, taunt7, taunt8, wrong, lose, best, wpf, loserHaha, greenPress, redPress, yellowPress, bluePress];
+const sounds = [noTaunt, trying, obstruction, ejecting, congratulations, thanks, noMore, peace, taunt0, taunt1, taunt2, taunt3, taunt4, taunt5, taunt6, taunt7, taunt8, wrong, lose, best, wpf, loserHaha, greenPress, redPress, yellowPress, bluePress, startLaugh, simonMIDI];
 
 
 
@@ -289,9 +291,7 @@ function startUp() {
     levelTitle.textContent = `CHOOSE YOUR SKILL`;
 
     setTimeout(() => {
-      startLaugh = new Audio('sounds/haha-start.mp3');
-
-      simonMIDI = new Audio('sounds/simonsays.mp3');
+      
       simonMIDI.loop = true;
       simonMIDI.play();
     }, 614);
@@ -356,9 +356,6 @@ function startUpDark() {
     levelTitle.textContent = `CHOOSE YOUR SKILL`;
 
     setTimeout(() => {
-      startLaugh = new Audio('sounds/haha-start.mp3');
-
-      simonMIDI = new Audio('sounds/simonsays.mp3');
       simonMIDI.loop = true;
       simonMIDI.play();
     }, 614);
@@ -428,9 +425,6 @@ function startUpIllum() {
     levelTitle.textContent = `CHOOSE YOUR SKILL`;
 
     setTimeout(() => {
-      startLaugh = new Audio('sounds/haha-start.mp3');
-
-      simonMIDI = new Audio('sounds/simonsays.mp3');
       simonMIDI.loop = true;
       simonMIDI.play();
     }, 614);
