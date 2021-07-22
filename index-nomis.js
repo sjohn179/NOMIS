@@ -950,7 +950,7 @@ function getUserInput(moveArr, userMoveArr) {
           youLose();
         }
         // find way to alter these times, based on skill level selected by user
-      }, 1916 + (passSpeed * (moveArr.length)));
+      }, 1616 + (passSpeed * (moveArr.length)));
     }
   }
 
