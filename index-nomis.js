@@ -49,6 +49,7 @@ const taunt6 = new Audio('sounds/easy.mp3');
 const taunt7 = new Audio('sounds/loser/pathetic.mp3');
 const taunt8 = new Audio('sounds/loser/u-suck.mp3');
 
+
 const taunts = [taunt0, taunt1, taunt2, taunt3, taunt4, taunt5, taunt6];
 
 const wrong = new Audio('sounds/wrong.mp3');
@@ -67,12 +68,18 @@ const bluePress = new Audio('sounds/blue.mp3');
 
 // audio3 = new Audio();
 
-
 const skillLevels = 6;
 
 let moveArr, userMoveArr, randNum, iterations, type, first, audio1, audio2, audio3, startLaugh, eyeInterval, simonMIDI, started, btnKey, levels, cpuSpeed, ticker, taunt, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign, currTaunt;
 
 let windowHeight, windowWidth, widthCalc, calcMarginH, calcMarginV, borderWidth, shadowWidth, shadowWidthInGame, wideAndShort, extraWideAndShort, extraExtraWideAndShort, tallAndNarrow, tallAndNarrowPortrait, won;
+
+
+
+const sounds = [noTaunt, trying, obstruction, ejecting, congratulations, thanks, noMore, peace, taunt0, taunt1, taunt2, taunt3, taunt4, taunt5, taunt6, taunt7, taunt8, wrong, lose, best, wpf, loserHaha, greenPress, redPress, yellowPress, bluePress];
+
+
+
 
 
 setTimeout(() => {
@@ -140,6 +147,15 @@ window.addEventListener('orientationchange',function() {
 
 function prePreStart(){
   if(initiated === false && started === false) {
+    for(let sound of sounds) {
+      sound.play();
+    
+      setTimeout(() => {
+        sound.currentTime = 0;
+        sound.pause();
+      },1);
+    }
+    
     preStart(event);
   }
 }
