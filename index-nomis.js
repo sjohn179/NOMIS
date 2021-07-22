@@ -147,14 +147,6 @@ window.addEventListener('orientationchange',function() {
 
 function prePreStart(){
   if(initiated === false && started === false) {
-    for(let sound of sounds) {
-      sound.play();
-    
-      setTimeout(() => {
-        sound.currentTime = 0;
-        sound.pause();
-      },1);
-    }
     
     preStart(event);
   }
@@ -164,6 +156,15 @@ function preStart(event) {
   won = false;
 
   if(initiated === false && started === false) {
+    for(let sound of sounds) {
+      sound.play();
+    
+      setTimeout(() => {
+        sound.currentTime = 0;
+        sound.pause();
+      },1);
+    }
+    
     startUp();
     initiated = true;
     // console.log(`i: ${initiated}`);
