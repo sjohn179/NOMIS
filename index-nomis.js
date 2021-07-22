@@ -7158,7 +7158,7 @@ function alignNomis() {
     gameOverLineHeight = '2.64';
   }
 
-
+  console.log('HI');
     
 
     
