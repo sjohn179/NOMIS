@@ -39,26 +39,40 @@ const landscapeN = window.matchMedia("(orientation: landscape)");
 const mobileNP = window.matchMedia("(max-width: 1400px)");
 const smallMedMobileNL = window.matchMedia("(max-height: 1068px)");
 
+const taunt0 = new Audio('sounds/rule.mp3');
+const taunt1 = new Audio('sounds/loser/bow.mp3');
+const taunt2 = new Audio('sounds/nothing.mp3');
+const taunt3 = new Audio('sounds/die.mp3');
+const taunt4 = new Audio('sounds/loser/dont-make-me-laugh.mp3');
+const taunt5 = new Audio('sounds/loser/never.mp3');
+const taunt6 = new Audio('sounds/easy.mp3');
+const taunt7 = new Audio('sounds/loser/pathetic.mp3');
+const taunt8 = new Audio('sounds/loser/u-suck.mp3');
+
+const taunts = [taunt0, taunt1, taunt2, taunt3, taunt4, taunt5, taunt6];
+
+const wrong = new Audio('sounds/wrong.mp3');
+const lose = new Audio('sounds/loser/lose.mp3');
+const best = new Audio('sounds/loser/your-best.mp3');
+const wpf = new Audio('sounds/loser/wpf.mp3');
+const loserHaha = new Audio('sounds/loser/haha.mp3');
+
+
+const loserTaunts = [taunt1, taunt2, taunt4, taunt5, taunt6, taunt7, taunt8, best, wpf];
+
+const greenPress = new Audio('sounds/green.mp3');
+const redPress = new Audio('sounds/red.mp3');
+const yellowPress = new Audio('sounds/yellow.mp3');
+const bluePress = new Audio('sounds/blue.mp3');
+
+// audio3 = new Audio();
+
+
 const skillLevels = 6;
 
-
-let moveArr, userMoveArr, randNum, iterations, type, first, eyeInterval, started, btnKey, levels, cpuSpeed, ticker, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign;
+let moveArr, userMoveArr, randNum, iterations, type, first, audio1, audio2, audio3, startLaugh, eyeInterval, simonMIDI, started, btnKey, levels, cpuSpeed, ticker, taunt, tauntInterval, tauntFreq, losses, myInterval, nomisTextAlign, currTaunt;
 
 let windowHeight, windowWidth, widthCalc, calcMarginH, calcMarginV, borderWidth, shadowWidth, shadowWidthInGame, wideAndShort, extraWideAndShort, extraExtraWideAndShort, tallAndNarrow, tallAndNarrowPortrait, won;
-
-
-
-const startLaugh = new Audio('sounds/haha-start.mp3');
-const simonMIDI = new Audio('sounds/simonsays.mp3');
-const taunt = new Audio();
-const taunt2 = new Audio();
-const audio1 = new Audio();
-const audio2 = new Audio();
-const audio3 = new Audio();
-const hahaLoseStart = new Audio('sounds/loser/haha.mp3');
-const earthquake = new Audio('sounds/earthquake.mp3');
-const screaming = new Audio('sounds/screaming.mp3');
-const explosion = new Audio('sounds/explosion.mp3');
 
 
 setTimeout(() => {
@@ -136,8 +150,8 @@ function preStart(event) {
   if(initiated === false && started === false) {
     startUp();
     initiated = true;
-    console.log(`i: ${initiated}`);
-    console.log(`s: ${started}`);
+    // console.log(`i: ${initiated}`);
+    // console.log(`s: ${started}`);
   } else if(initiated === true && started === false) {
     initiated = false;
 
@@ -145,7 +159,7 @@ function preStart(event) {
 
     getReady(key);
   } else {
-    console.log('Ineffective Key Press.');
+    // console.log('Ineffective Key Press.');
   }
 
   alignNomis();
@@ -187,10 +201,10 @@ function preStart(event) {
     setTimeout(() => {
       // randNum = Math.floor(Math.random() * 4);
 
-      // console.log(`randNum: ${randNum}`);
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`randNum: ${randNum}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
       getCPUInput(moveArr);
     }, 1414);
@@ -198,10 +212,10 @@ function preStart(event) {
     setTimeout(() => {
       // randNum = Math.floor(Math.random() * 4);
 
-      // console.log(`randNum: ${randNum}`);
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`randNum: ${randNum}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
-      // console.log(`moveArr: ${moveArr}`);
+      // // console.log(`moveArr: ${moveArr}`);
 
       getCPUInput(moveArr);
     }, 2828);
@@ -258,8 +272,10 @@ function startUp() {
     levelTitle.textContent = `CHOOSE YOUR SKILL`;
 
     setTimeout(() => {
+      startLaugh = new Audio('sounds/haha-start.mp3');
+
+      simonMIDI = new Audio('sounds/simonsays.mp3');
       simonMIDI.loop = true;
-      simonMIDI.currentTime = 0;
       simonMIDI.play();
     }, 614);
   }
@@ -323,6 +339,9 @@ function startUpDark() {
     levelTitle.textContent = `CHOOSE YOUR SKILL`;
 
     setTimeout(() => {
+      startLaugh = new Audio('sounds/haha-start.mp3');
+
+      simonMIDI = new Audio('sounds/simonsays.mp3');
       simonMIDI.loop = true;
       simonMIDI.play();
     }, 614);
@@ -392,6 +411,9 @@ function startUpIllum() {
     levelTitle.textContent = `CHOOSE YOUR SKILL`;
 
     setTimeout(() => {
+      startLaugh = new Audio('sounds/haha-start.mp3');
+
+      simonMIDI = new Audio('sounds/simonsays.mp3');
       simonMIDI.loop = true;
       simonMIDI.play();
     }, 614);
@@ -489,12 +511,12 @@ function getReady(key) {
       },1614);
     }
 
-    for (let x = 1; x <= 7; x++) {
+    for (let x = 1; x <= 3; x++) {
 
       for (let y = 0; y < buttonsNomis.length; y++) {
         setTimeout(() => {
           buttonsNomis[y].click();
-        }, 116 * (x * (y + 1)));
+        }, 214 * (x * (y + 1)));
       }
     }
 
@@ -576,25 +598,11 @@ function startGame() {
 
   let nomisWA = alignNomis();
 
+
   setTimeout(() => {
     let randTaunt = Math.floor(Math.random() * 4);
 
-    switch (randTaunt) {
-      case 0:
-        taunt.src = 'sounds/rule.mp3';
-        break;
-      case 1:
-        taunt.src = 'sounds/loser/bow.mp3';
-        break;
-      case 2:
-        taunt.src = 'sounds/nothing.mp3';
-        break;
-      case 3:
-        taunt.src = 'sounds/die.mp3';
-        break;
-    }
-
-    taunt.play();
+    taunts[randTaunt].play();
 
         /*const rule = new Audio('sounds/rule.mp3');
         rule.play();*/
@@ -602,31 +610,36 @@ function startGame() {
     tauntInterval = setInterval(() => {
       let randTaunt2 = Math.floor(Math.random() * 7);
 
+      /*
       switch (randTaunt2) {
         case 0:
-          taunt2.src = 'sounds/rule.mp3';
+          taunt2 = new Audio('sounds/rule.mp3');
           break;
         case 1:
-          taunt2.src = 'sounds/loser/bow.mp3';
+          taunt2 = new Audio('sounds/loser/bow.mp3');
           break;
         case 2:
-          taunt2.src = 'sounds/loser/dont-make-me-laugh.mp3';
+          taunt2 = new Audio('sounds/loser/dont-make-me-laugh.mp3');
           break;
         case 3:
-          taunt2.src = 'sounds/loser/never.mp3';
+          taunt2 = new Audio('sounds/loser/never.mp3');
           break;
         case 4:
-          taunt2.src = 'sounds/easy.mp3';
+          taunt2 = new Audio('sounds/easy.mp3');
           break;
         case 5:
-          taunt2.src = 'sounds/nothing.mp3';
+          taunt2 = new Audio('sounds/nothing.mp3');
           break;
         case 6:
-          taunt2.src = 'sounds/die.mp3';
+          taunt2 = new Audio('sounds/die.mp3');
           break;
       }
 
-      taunt2.play();
+      taunt2.play();*/
+
+      taunts[randTaunt2].play();
+
+
 
       frame.style.cssText = `border: ${borderWidth}px solid rgb(0,176,176); background-color: rgb(20,20,20);`;
       nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
@@ -789,10 +802,10 @@ function startGame() {
       setTimeout(() => {
         // randNum = Math.floor(Math.random() * 4);
 
-        // console.log(`randNum: ${randNum}`);
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`randNum: ${randNum}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
         getCPUInput(moveArr);
       }, 2214);
@@ -800,10 +813,10 @@ function startGame() {
       setTimeout(() => {
         // randNum = Math.floor(Math.random() * 4);
 
-        // console.log(`randNum: ${randNum}`);
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`randNum: ${randNum}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
-        // console.log(`moveArr: ${moveArr}`);
+        // // console.log(`moveArr: ${moveArr}`);
 
         getCPUInput(moveArr);
       }, 2214);
@@ -822,7 +835,7 @@ function pressButton(e) {
 
   document.getElementById(`${el}`).classList.add('pressed');
 
-  console.log(`el: ${el}`);
+  // console.log(`el: ${el}`);
 
   /*if(moveArr.length <= userMoveArr.length) {
     randNum = Math.floor(Math.random() * 3);
@@ -837,21 +850,17 @@ function pressButton(e) {
 
   
   if (el === 'green') {
-    audio1.src = 'sounds/green.mp3';
-    audio1.play();
-    // console.log('green');
+    greenPress.play();
+      console.log('green pressed');
   } else if (el === 'red') {
-    audio1.src = 'sounds/red.mp3';
-    audio1.play();
-    // console.log('red');
+    redPress.play();
+      console.log('red pressed');
   } else if (el === 'yellow') {
-    audio1.src = 'sounds/yellow.mp3';
-    audio1.play();
-    // console.log('yellow');
+    yellowPress.play();
+      console.log('yellow pressed');
   } else if (el === 'blue') {
-    audio1.src = 'sounds/blue.mp3';
-    audio1.play();
-    // console.log('blue');
+    bluePress.play();
+      console.log('blue pressed');
   }
   // put into place so that button highlight is removed 614ms after it is clicked
   setTimeout(() => {
@@ -868,8 +877,8 @@ function verifyCorrect(moveArr, userMoveArr) {
   let result;
 
   for (let i = 0; i < userMoveArr.length; i++) {
-    /*console.log(`userMoveArr[i]: ${userMoveArr[i]}`);
-    console.log(`moveArr[i]: ${moveArr[i]}`);*/
+    /*// console.log(`userMoveArr[i]: ${userMoveArr[i]}`);
+    // console.log(`moveArr[i]: ${moveArr[i]}`);*/
 
     if (userMoveArr[i] !== moveArr[i]) {
       result = false;
@@ -926,8 +935,8 @@ function getUserInput(moveArr, userMoveArr) {
 
         res = verifyCorrect(moveArr, userMoveArr);
         /*
-                console.log(`moveArr: ${moveArr}`);
-                console.log(`userMoveArr: ${userMoveArr}`);*/
+                // console.log(`moveArr: ${moveArr}`);
+                // console.log(`userMoveArr: ${userMoveArr}`);*/
 
         if (res && moveArr.length === userMoveArr.length && iterations === levels) {
             getCPUInput(moveArr);
@@ -938,8 +947,6 @@ function getUserInput(moveArr, userMoveArr) {
         } else if (res && moveArr.length > userMoveArr.length) {
           getUserInput(moveArr, userMoveArr);
         } else if (!res) {
-          audio1.src = 'sounds/wrong.mp3';
-          audio1.play();
           youLose();
         }
         // find way to alter these times, based on skill level selected by user
@@ -954,8 +961,8 @@ function getUserInput(moveArr, userMoveArr) {
 
   type = 'user';
 
-  console.log(`userMoveArr.length: ${userMoveArr.length}`);
-  console.log(`moveArr.length: ${moveArr.length}`);
+  // console.log(`userMoveArr.length: ${userMoveArr.length}`);
+  // console.log(`moveArr.length: ${moveArr.length}`);
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(event) {
@@ -976,8 +983,8 @@ function getUserInput(moveArr, userMoveArr) {
       if (userMoveArr.length < moveArr.length) {
         userMoveArr.push(el);
 
-        console.log(`moveArr: ${moveArr}`);
-        console.log(`userMoveArr: ${userMoveArr}`);
+        // console.log(`moveArr: ${moveArr}`);
+        // console.log(`userMoveArr: ${userMoveArr}`);
 
         res = verifyCorrect(moveArr, userMoveArr);
 
@@ -1021,7 +1028,7 @@ function getCPUInput(moveArr) {
     youWin();
 
   } else if (iterations <= levels) {
-    console.log('');
+    // console.log('');
     randNum = Math.floor(Math.random() * 4);
     moveArr.push(randNum);
 
@@ -1052,8 +1059,8 @@ function getCPUInput(moveArr) {
 
 
 
-        console.log(`Iteration ${iterations}, Move ${i}: ${moveArr[i]}`);
-        //console.log(`moveArr: ${moveArr}`);
+        // console.log(`Iteration ${iterations}, Move ${i}: ${moveArr[i]}`);
+        //// console.log(`moveArr: ${moveArr}`);
       }, 614 * i);
     }
 
@@ -1089,11 +1096,12 @@ function youLose() {
   widthValN = `${nAlign[0]}vw`;
 
 
-  audio2.src = 'sounds/loser/lose.mp3';
-  audio2.loop = true;
-  audio2.currentTime = 0;
-  audio2.play();
+  wrong.play();
 
+  lose.loop = true;
+  lose.play();
+
+  // audio3 = new Audio();
 
   bodyOverlay.style.cssText = `visibility: visible;`;
   nomisBody.style.cssText = `text-align: center; background: url(skulls.jpg); background-size: cover;`;
@@ -1105,25 +1113,24 @@ function youLose() {
   setTimeout(() => {
     bodyOverlay.style.cssText = `visibility: hidden;`;
     nomisBody.style.cssText = `text-align: center; background: url(skulls.jpg); background-size: cover; overflow: hidden;`;
-  }, 614);
+  }, 414);
+
+
 
   setTimeout(() => {
-    audio1.src = 'sounds/loser/your-best.mp3';
-    audio1.play();
+    best.play();
 
     // revert to 1014 if Shao Kahn is used
-  }, 1214);
+  }, 815);
 
   setTimeout(() => {
-    audio1.src = 'sounds/loser/wpf.mp3';
-    audio1.play();
+    wpf.play();
     // revert to 2688 if Shao Kahn
-  }, 3034);
+  }, 2088);
 
 
   majorTimeout = setTimeout(() => {
-    audio1.src = 'sounds/loser/haha.mp3';
-    audio1.play();
+    loserHaha.play();
 
     nomis.style.cssText = `background-color: transparent; border-color: transparent;`;
 
@@ -1202,38 +1209,14 @@ function youLose() {
       nomisText.style.cssText = `font-size: ${nAlign[2]}; background: -webkit-linear-gradient(rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128), rgb(128,128,128)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 103;`;
     }, 1776);
 
+
+    
     myInterval = setInterval(() => { 
       randSong = Math.floor(Math.random() * 9);
 
-      switch (randSong) {
-        case 0:
-          audio3.src = 'sounds/loser/bow.mp3';
-          break;
-        case 1:
-          audio3.src = 'sounds/loser/dont-make-me-laugh.mp3';
-          break;
-        case 2:
-          audio3.src = 'sounds/loser/never.mp3';
-          break;
-        case 3:
-          audio3.src = 'sounds/loser/pathetic.mp3';
-          break;
-        case 4:
-          audio3.src = 'sounds/loser/u-suck.mp3';
-          break;
-        case 5:
-          audio3.src = 'sounds/loser/wpf.mp3';
-          break;
-        case 6:
-          audio3.src = 'sounds/loser/your-best.mp3';
-          break;
-        case 7:
-          audio3.src = 'sounds/easy.mp3';
-          break;
-        case 8:
-          audio3.src = 'sounds/nothing.mp3';
-          break;
-      }
+      currTaunt = loserTaunts[randSong];
+
+      currTaunt.play();
 
       if(portraitN.matches && mobileNP.matches) {
         //  left: 0vw; margin-left: ${nAlign[1]}vw;
@@ -1309,7 +1292,7 @@ function youLose() {
       nomisOverlay.style.cssText = `animation: nomis-overlay-flash 4116ms 1 ease-in-out;`;
 
 
-      audio3.play();
+      currTaunt.play();
 
       // font-size: 84px; (BELOW)
       setTimeout(() => {
@@ -1321,13 +1304,13 @@ function youLose() {
 
 
       hahaTimeout = setTimeout(() => {
-        audio1.play();
-      }, 2214);
+        loserHaha.play();
+      }, 2116);
 
     }, 14019);
 
     // revert to 5114 if I switch back to Shao Kahn
-  }, 5616);
+  }, 4416);
 
 
   if(portraitN.matches && window.matchMedia("(max-width: 399px)").matches) {
@@ -1411,9 +1394,15 @@ function pauseTaunts() {
 function pauseAudio() {
 
 
-    audio1.pause();
-    audio2.pause();
-    audio3.pause();  
+    lose.pause();
+    lose.currentTime = 0;
+
+    if(currTaunt) {
+      currTaunt.pause();
+    }
+
+
+    loserHaha.pause();  
 
   
   
@@ -1442,7 +1431,7 @@ function pauseAudio() {
     
 
     
-    
+    let hahaLoseStart = new Audio('sounds/loser/haha.mp3');
     hahaLoseStart.play();
 
     levelTitle.style.cssText = `background-color: rgb(0,176,176); color: rgb(254,254,254); font-size: ${levelFontSz}; animation: none; box-shadow: 0 0 ${borderWidth}px rgb(0,207,212);`;
@@ -1616,7 +1605,7 @@ setTimeout(() => {
 
 
   setTimeout(() => {
-    
+    earthquake = new Audio('sounds/earthquake.mp3');
     earthquake.loop = true;
     earthquake.play();
 
@@ -1675,8 +1664,6 @@ setTimeout(() => {
 
   // oscillate for 4104ms
 
-  
-
 
   setTimeout(() => {
     ejecting.play();
@@ -1691,8 +1678,6 @@ setTimeout(() => {
   setTimeout(() => {
     frame.style.animation = 'none';
   },beTimeout - 1);
-
-  
 
   setTimeout(() => {
     noTaunt.play();
@@ -1733,7 +1718,7 @@ setTimeout(() => {
         center.style.cssText = `height: ${aNom[6]}vh; top: ${aNom[5]}vh; animation: board-destroy 4014ms 1 ease-in;`;
       }
       
-      
+      const screaming = new Audio('sounds/screaming.mp3');
       screaming.play();
       nomis.style.cssText = `visibility: hidden;`;
       nomisText.style.cssText = `visibility: hidden;`;
@@ -1743,11 +1728,12 @@ setTimeout(() => {
 
 
   setTimeout(() => {
+    const explosion = new Audio('sounds/explosion.mp3');
     explosion.play();
     shadowOverlay.style.cssText = `animation: explosion-fade-in 1428ms 1 ease-in-out;`;
 
     setTimeout(() => {
-      audio1.src = 'sounds/championscut.mp3';
+      audio1 = new Audio('sounds/championscut.mp3');
       audio1.loop = true;
 
       /*const obstruction = new Audio('sounds/winner/obstruction.mp3');
@@ -2049,7 +2035,7 @@ function alignNomis() {
       }
     
     
-      console.log(`alert: ${calcMarginH}`);
+      // console.log(`alert: ${calcMarginH}`);
   
   
       if(window.matchMedia("(min-width: 1200px)").matches) {
@@ -2956,7 +2942,7 @@ function alignNomis() {
 
           let altWidthCalc = ((windowHeight * 0.2) / windowWidth) * 100;
 
-          console.log(`widthCalc: ${widthCalc}, altWidthCalc: ${altWidthCalc}`);
+          // console.log(`widthCalc: ${widthCalc}, altWidthCalc: ${altWidthCalc}`);
 
 
           
@@ -7158,7 +7144,7 @@ function alignNomis() {
     gameOverLineHeight = '2.64';
   }
 
-  console.log('HI');
+
     
 
     
@@ -7167,8 +7153,8 @@ function alignNomis() {
   
       // document.querySelector('.win-center').style.cssText = `width: ${widthCalc}vw; left: ${calcMarginH}vw;`;
 
-      console.log(`HEIGHT CALC: ${heightCalc}`);
-      console.log(`CALC MARGIN V: ${calcMarginV}`);
+      // console.log(`HEIGHT CALC: ${heightCalc}`);
+      // console.log(`CALC MARGIN V: ${calcMarginV}`);
  
       return [widthCalc, calcMarginH, nomisFontSize, levelFontSize, levelChoiceFontSize, calcMarginV, heightCalc, btnWidth, nomisTextAlign, winLevelLineHeight, gameOverFontSize, gameOverLineHeight, winLevelFontSize, portraitMarginV];
     
