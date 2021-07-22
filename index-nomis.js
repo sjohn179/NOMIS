@@ -511,12 +511,12 @@ function getReady(key) {
       },1614);
     }
 
-    for (let x = 1; x <= 3; x++) {
+    for (let x = 1; x <= 7; x++) {
 
       for (let y = 0; y < buttonsNomis.length; y++) {
         setTimeout(() => {
           buttonsNomis[y].click();
-        }, 214 * (x * (y + 1)));
+        }, 116 * (x * (y + 1)));
       }
     }
 
